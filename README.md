@@ -30,7 +30,7 @@ A mod that allows you to adjust camera to make cinematic video.
 
   Note: Please make sure that `Cinematic Camera` is loaded after `RTS Camera`. For now the loading sequence in official launcher is **incorrect**.
 
-  You use launcher fix mod or use Vortex to sort them automatically.
+  You can use launcher fix mod or use Vortex to sort them automatically.
 
 - Then play the game as usual.
 
