@@ -1,6 +1,6 @@
 # Cinematic Camera
 
-A mod that allows you to adjust camera to make Cinematic.
+A mod that allows you to adjust camera to make cinematic video.
 
 ## Features
 - Adjust FOV, depth of field, moving speed of camera in [`RTS Camera`](https://www.nexusmods.com/mountandblade2bannerlord/mods/355).
