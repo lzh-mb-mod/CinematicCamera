@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="English" />
+  </tags>
+  <strings>
+    <string id="CinimaticCamera_extensioncinematiccamera" text="Extension: Cinematic Camera" />
+    <string id="CinimaticCamera_playerinvulnerable" text="Player Invulnerable" />
+
+    <string id="CinimaticCamera_verticalfov" text="Vertical Fov" />
+    <string id="CinimaticCamera_reset" text="Reset" />
+    <string id="CinimaticCamera_zoom" text="Zoom" />
+    <string id="CinimaticCamera_rotatesmoothmode" text="Rotate Smooth Mode" />
+    <string id="CinimaticCamera_speedfactor" text="Movement Speed Factor" />
+    <string id="CinimaticCamera_verticalspeedfactor" text="Vertical Movement Speed Factor" />
+    <string id="CinimaticCamera_depthoffielddistance" text="Depth of Field Distance" />
+    <string id="CinimaticCamera_depthoffieldstart" text="Depth of Field Focus Start" />
+    <string id="CinimaticCamera_depthoffieldend" text="Depth of Field Focus End" />
+  </strings>
+</base>
