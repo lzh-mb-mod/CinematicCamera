@@ -7,7 +7,7 @@ A mod that allows you to adjust camera to make cinematic video.
 
 - Optionally set player character invulnerable to avoid it being killed accidentally.
 
-- Configuration saving. The configuration is saved in directory `(user directory)\Documents\Mount and Blade II Bannerlord\Configs\EnhancedMission\`.
+- Configuration saving. The configuration is saved in directory `(user directory)\Documents\Mount and Blade II Bannerlord\Configs\RTSCamera\`.
   
   The config file is saved in file `CinematicCameraConfig.xml`.
 

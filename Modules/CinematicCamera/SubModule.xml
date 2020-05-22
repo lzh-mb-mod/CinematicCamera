@@ -2,15 +2,11 @@
 <Module>
 	<Name value = "Cinematic Camera"/>
 	<Id value = "CinematicCamera"/>
-	<Version value = "e1.0.0"/>
+	<Version value = "e1.0.1"/>
 	<SingleplayerModule value="true"/>
 	<MultiplayerModule value="false"/>
 	<DependedModules>
-         <DependedModule Id="Native"/>
-         <DependedModule Id="SandBoxCore"/>
-         <DependedModule Id="Sandbox"/>
-		 <!-- RTS Camera -->
-		 <DependedModule Id="EnhancedMission" />
+		 <DependedModule Id="RTSCamera" />
 	</DependedModules>
 	<SubModules>
 		<SubModule>

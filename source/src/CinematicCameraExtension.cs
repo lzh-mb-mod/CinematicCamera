@@ -1,13 +1,11 @@
-﻿using System;
+﻿using RTSCamera;
 using System.Collections.Generic;
-using System.Text;
-using EnhancedMission;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
 {
-    public class CinematicCameraExtension : EnhancedMissionExtension
+    public class CinematicCameraExtension : RTSCameraExtension
     {
         public override void OpenModMenu(Mission mission)
         {

@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="EnhancedMission">
-      <HintPath>..\..\..\EnhancedMission\bin\Win64_Shipping_Client\EnhancedMission.dll</HintPath>
+    <Reference Include="RTSCamera">
+      <HintPath>..\..\..\RTSCamera\bin\Win64_Shipping_Client\RTSCamera.dll</HintPath>
     </Reference>
     <Reference Include="SandBox">
       <HintPath>..\..\..\SandBox\bin\Win64_Shipping_Client\SandBox.dll</HintPath>

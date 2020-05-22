@@ -1,4 +1,4 @@
-﻿using EnhancedMission;
+﻿using RTSCamera;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
@@ -51,12 +51,9 @@ namespace CinematicCamera
             }
             else
             {
-                if (agent.AgentDrivenProperties == null)
-                {
-                    agent.HealthLimit = agent.Character.HitPoints;
-                    agent.Health = agent.HealthLimit;
-                }
-                else
+                agent.HealthLimit = agent.Character.HitPoints;
+                agent.Health = agent.HealthLimit;
+                if (agent.AgentDrivenProperties != null)
                 {
                     MissionGameModels.Current.AgentStatCalculateModel.InitializeAgentStats(agent, agent.SpawnEquipment, agent.AgentDrivenProperties, (AgentBuildData)null);
                 }

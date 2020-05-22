@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RTSCamera;
 using TaleWorlds.MountAndBlade;
-using EnhancedMission;
-using TaleWorlds.Engine;
-using TaleWorlds.Engine.Screens;
-using TaleWorlds.MountAndBlade.View.Screen;
 
 namespace CinematicCamera
 {

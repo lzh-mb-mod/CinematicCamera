@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RTSCamera;
+using System;
+using System.IO;
 using System.Xml.Serialization;
-using EnhancedMission;
-using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
 {
-    public class CinematicCameraConfig : EnhancedMissionConfigBase<CinematicCameraConfig>
+    public class CinematicCameraConfig : RTSCameraConfigBase<CinematicCameraConfig>
     {
         private static CinematicCameraConfig _instance;
 
@@ -81,7 +79,7 @@ namespace CinematicCamera
             DepthOfFieldStart = other.DepthOfFieldStart;
             DepthOfFieldEnd = other.DepthOfFieldEnd;
         }
-        protected override string SaveName => SavePath + nameof(CinematicCameraConfig) + ".xml";
-        protected override string[] OldNames { get; } = { };
+        protected override string SaveName => Path.Combine(SavePath, nameof(CinematicCameraConfig) + ".xml");
+        protected override string[] OldNames { get; } = { Path.Combine(OldSavePath, "CinematicCameraConfig.xml") };
     }
 }

@@ -7,7 +7,7 @@
 
 - 可选地将玩家角色设为无敌，以避免其偶然阵亡。
 
-- 保存配置：保存配置的文件夹为`(user directory)\Documents\Mount and Blade II Bannerlord\Configs\EnhancedMission\`
+- 保存配置：保存配置的文件夹为`(user directory)\Documents\Mount and Blade II Bannerlord\Configs\RTSCamera\`
 
   配置保存在文件`CinematicCameraConfig.xml`中。
 
