@@ -1,4 +1,8 @@
 # Changelog
+## [e1.0.3] - 2020-10-19
+### Fixed
+- Keep compatible with RTS Camera.
+
 ## [e1.0.2] - 2020-05-25
 ### Changed
 - Make depth of field slider wider.

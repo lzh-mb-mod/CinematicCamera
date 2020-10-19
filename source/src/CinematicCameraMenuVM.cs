@@ -1,4 +1,4 @@
-﻿using RTSCamera;
+﻿using RTSCamera.View.Basic;
 using System;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
@@ -39,7 +39,7 @@ namespace CinematicCamera
                 if (_config.PlayerInvulnerable == value)
                     return;
                 _config.PlayerInvulnerable = value;
-                _setPlayerHealthLogic?.UpdateHealth(_config.PlayerInvulnerable);
+                _setPlayerHealthLogic?.UpdateInvulnerable(_config.PlayerInvulnerable);
                 OnPropertyChanged(nameof(PlayerInvulnerable));
             }
         }

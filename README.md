@@ -36,7 +36,7 @@ A mod that allows you to adjust camera to make cinematic video.
 
 - After entering a mission (scene):
 
-  - Press `O(letter)` (by default) and then click `Extension: Cinematic Camera` to open menu of this mod. You can access the options of this mod in it.
+  - Press `L(letter)` (by default) and then click `Extension: Cinematic Camera` to open menu of this mod. You can access the options of this mod in it.
 
   - All the options will be applied when camera is in RTS mode.  Press `F10` by default to enable it. For details please read instructions in `RTS Camera`.
 

@@ -1,4 +1,4 @@
-﻿using RTSCamera;
+﻿using RTSCamera.View;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera

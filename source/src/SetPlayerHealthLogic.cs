@@ -1,20 +1,18 @@
-﻿using RTSCamera;
+﻿using RTSCamera.Event;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
 {
     public class SetPlayerHealthLogic : MissionLogic
     {
-        private CinematicCameraConfig _config = CinematicCameraConfig.Get();
-        private ControlTroopLogic _controlTroopLogic;
+        private readonly CinematicCameraConfig _config = CinematicCameraConfig.Get();
 
         public override void OnBehaviourInitialize()
         {
             base.OnBehaviourInitialize();
 
             Mission.OnMainAgentChanged += Mission_OnMainAgentChanged;
-            _controlTroopLogic = Mission.GetMissionBehaviour<ControlTroopLogic>();
-            _controlTroopLogic.MainAgentWillBeChangedToAnotherOne += MainAgentWillBeChangedToAnotherOne;
+            MissionEvent.MainAgentWillBeChangedToAnotherOne += MainAgentWillBeChangedToAnotherOne;
         }
 
         public override void OnRemoveBehaviour()
@@ -22,12 +20,13 @@ namespace CinematicCamera
             base.OnRemoveBehaviour();
 
             Mission.OnMainAgentChanged -= Mission_OnMainAgentChanged;
+            MissionEvent.MainAgentWillBeChangedToAnotherOne -= MainAgentWillBeChangedToAnotherOne;
         }
 
-        private void MainAgentWillBeChangedToAnotherOne()
+        private void MainAgentWillBeChangedToAnotherOne(Agent newAgent)
         {
             if (_config.PlayerInvulnerable)
-                UpdateHealth(false);
+                UpdateInvulnerable(false);
         }
 
         private void Mission_OnMainAgentChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -35,30 +34,16 @@ namespace CinematicCamera
             if (Mission.MainAgent != null)
             {
                 if (_config.PlayerInvulnerable)
-                    UpdateHealth(true);
+                    UpdateInvulnerable(true);
             }
         }
 
-        public void UpdateHealth(bool invulnerable)
+        public void UpdateInvulnerable(bool invulnerable)
         {
             if (Mission.MainAgent == null)
                 return;
             var agent = Mission.MainAgent;
-            if (invulnerable)
-            {
-                agent.HealthLimit = 100000;
-                agent.Health = 100000;
-            }
-            else
-            {
-                agent.HealthLimit = agent.Character.HitPoints;
-                agent.Health = agent.HealthLimit;
-                if (agent.AgentDrivenProperties != null)
-                {
-                    MissionGameModels.Current.AgentStatCalculateModel.InitializeAgentStats(agent, agent.SpawnEquipment, agent.AgentDrivenProperties, (AgentBuildData)null);
-                }
-            }
-            agent.UpdateAgentProperties();
+            agent.SetInvulnerable(invulnerable);
         }
     }
 }
