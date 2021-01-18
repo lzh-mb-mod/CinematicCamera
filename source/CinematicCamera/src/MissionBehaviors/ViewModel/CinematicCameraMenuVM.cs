@@ -1,5 +1,6 @@
 ﻿using MissionSharedLibrary.View;
 using System;
+using MissionSharedLibrary.View.ViewModelCollection.Basic;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
@@ -11,9 +12,6 @@ namespace CinematicCamera
 
         private readonly SetPlayerHealthLogic _setPlayerHealthLogic =
             Mission.Current.GetMissionBehaviour<SetPlayerHealthLogic>();
-
-        private readonly ModifyCameraLogic
-            _modifyCameraLogic = Mission.Current.GetMissionBehaviour<ModifyCameraLogic>();
 
         private NumericVM _verticalFov;
         //private NumericVM _zoom;
@@ -86,7 +84,7 @@ namespace CinematicCamera
                 if (_config.RotateSmoothMode == value)
                     return;
                 _config.RotateSmoothMode = value;
-                _modifyCameraLogic?.UpdateRotateSmoothMode();
+                ModifyCameraHelper.UpdateRotateSmoothMode();
                 OnPropertyChanged(nameof(RotateSmoothMode));
             }
         }
@@ -167,25 +165,25 @@ namespace CinematicCamera
                 fov =>
                 {
                     _config.CameraFov = fov;
-                    _modifyCameraLogic?.UpdateFov();
+                    ModifyCameraHelper.UpdateFov();
                 });
             //Zoom = new NumericVM(GameTexts.FindText("str_cinematic_camera_zoom").ToString(), _config.Zoom, 0.01f, 10, false,
             //    zoom =>
             //    {
             //        _config.Zoom = zoom;
-            //        _modifyCameraLogic.UpdateZoom();
+            //        ModifyCameraHelper.UpdateZoom();
             //    });
             SpeedFactor = new NumericVM(GameTexts.FindText("str_cinematic_camera_speed_factor").ToString(), _config.SpeedFactor, 0.01f,9.99f, false,
                 factor =>
                 {
                     _config.SpeedFactor = factor;
-                    _modifyCameraLogic?.UpdateSpeed();
+                    ModifyCameraHelper.UpdateSpeed();
                 });
             VerticalSpeedFactor = new NumericVM(GameTexts.FindText("str_cinematic_camera_vertical_speed_factor").ToString(), _config.VerticalSpeedFactor, 0.01f, 9.99f, false,
                 factor =>
                 {
                     _config.VerticalSpeedFactor = factor;
-                    _modifyCameraLogic?.UpdateSpeed();
+                    ModifyCameraHelper.UpdateSpeed();
                 });
 
             var scene = Mission.Current.Scene;
@@ -193,20 +191,20 @@ namespace CinematicCamera
                 v =>
                 {
                     _config.DepthOfFieldDistance = v;
-                    _modifyCameraLogic.UpdateDepthOfFieldDistance();
-                    _modifyCameraLogic.UpdateDepthOfFieldParameters();
+                    ModifyCameraHelper.UpdateDepthOfFieldDistance();
+                    ModifyCameraHelper.UpdateDepthOfFieldParameters();
                 });
             DepthOfFieldStart = new NumericVM(GameTexts.FindText("str_cinematic_camera_depth_of_field_start").ToString(), _config.DepthOfFieldStart, 0, 100f, false,
                 v =>
                 {
                     _config.DepthOfFieldStart = v;
-                    _modifyCameraLogic.UpdateDepthOfFieldParameters();
+                    ModifyCameraHelper.UpdateDepthOfFieldParameters();
                 });
             DepthOfFieldEnd = new NumericVM(GameTexts.FindText("str_cinematic_camera_depth_of_field_End").ToString(), _config.DepthOfFieldEnd, 0, 100f, false,
                 v =>
                 {
                     _config.DepthOfFieldEnd = v;
-                    _modifyCameraLogic.UpdateDepthOfFieldParameters();
+                    ModifyCameraHelper.UpdateDepthOfFieldParameters();
                 });
         }
 

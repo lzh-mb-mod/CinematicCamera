@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="简体中文" />
+  </tags>
+  <strings>
+    <string id="CinematicCamera_cinematiccamera" text="电影镜头" />
+    <string id="CinematicCamera_open_menu" text="打开菜单" />
+    <string id="CinematicCamera_playerinvulnerable" text="玩家角色无敌" />
+
+    <string id="CinematicCamera_camera_parameters" text="镜头参数" />
+    <string id="CinematicCamera_verticalfov" text="垂直方向视野" />
+    <string id="CinematicCamera_reset" text="重置" />
+    <string id="CinematicCamera_zoom" text="缩放" />
+    <string id="CinematicCamera_rotatesmoothmode" text="平滑旋转模式" />
+    <string id="CinematicCamera_speedfactor" text="移动速度倍率" />
+    <string id="CinematicCamera_verticalspeedfactor" text="垂直移动速度倍率" />
+    <string id="CinematicCamera_depthoffielddistance" text="景深焦距" />
+    <string id="CinematicCamera_depthoffieldstart" text="景深开始参数" />
+    <string id="CinematicCamera_depthoffieldend" text="景深结束参数" />
+  </strings>
+</base>

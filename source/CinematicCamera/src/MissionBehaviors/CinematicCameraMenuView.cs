@@ -8,7 +8,11 @@ namespace CinematicCamera
         public CinematicCameraMenuView()
             : base(25, nameof(CinematicCameraMenuView))
         {
-            this.GetDataSource = () => new CinematicCameraMenuVM(this.OnCloseMenu);
+        }
+
+        protected override MissionMenuVMBase GetDataSource()
+        {
+            return  new CinematicCameraMenuVM(this.OnCloseMenu);
         }
     }
 }

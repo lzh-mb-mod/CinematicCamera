@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <strings>
+    <string id="str_cinematic_camera_cinematic_camera" text="{=CinematicCamera_cinematiccamera}Cinematic Camera" />
+    <string id="str_cinematic_camera_open_menu" text="{=CinematicCamera_open_menu}Open Menu" />
+    <string id="str_cinematic_camera_player_invulnerable" text="{=CinematicCamera_playerinvulnerable}Player Invulnerable" />
+
+    <string id="str_cinematic_camera_camera_parameters" text="{=CinematicCamera_camera_parameters}Camera Parameters" />
+    <string id="str_cinematic_camera_vertical_fov" text="{=CinematicCamera_verticalfov}Vertical Fov" />
+    <string id="str_cinematic_camera_reset" text="{=CinematicCamera_reset}Reset" />
+    <string id="str_cinematic_camera_zoom" text="{=CinematicCamera_zoom}Zoom" />
+    <string id="str_cinematic_camera_rotate_smooth_mode" text="{=CinematicCamera_rotatesmoothmode}Rotate Smooth Mode" />
+    <string id="str_cinematic_camera_speed_factor" text="{=CinematicCamera_speedfactor}Movement Speed Factor" />
+    <string id="str_cinematic_camera_vertical_speed_factor" text="{=CinematicCamera_verticalspeedfactor}Vertical Movement Speed Factor" />
+    <string id="str_cinematic_camera_depth_of_field_distance" text="{=CinematicCamera_depthoffielddistance}Depth of Field Distance" />
+    <string id="str_cinematic_camera_depth_of_field_start" text="{=CinematicCamera_depthoffieldstart}Depth of Field Focus Start" />
+    <string id="str_cinematic_camera_depth_of_field_End" text="{=CinematicCamera_depthoffieldend}Depth of Field Focus End" />
+  </strings>
+</base>

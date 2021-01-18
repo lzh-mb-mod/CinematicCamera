@@ -8,8 +8,6 @@ namespace CinematicCamera
 {
     public class CinematicCameraConfig : MissionConfigBase<CinematicCameraConfig>
     {
-        private static CinematicCameraConfig _instance;
-
         protected static Version BinaryVersion => new Version(1, 0);
         public string ConfigVersion { get; set; } = BinaryVersion.ToString();
 
@@ -25,10 +23,6 @@ namespace CinematicCamera
                 case "1.0":
                     break;
             }
-        }
-        private static CinematicCameraConfig CreateDefault()
-        {
-            return new CinematicCameraConfig();
         }
 
         public bool PlayerInvulnerable = false;
@@ -50,23 +44,8 @@ namespace CinematicCamera
         public float DepthOfFieldEnd = 0;
 
 
-        public static CinematicCameraConfig Get()
-        {
-            if (_instance == null)
-            {
-                _instance = CreateDefault();
-                _instance.SyncWithSave();
-            }
-
-            return _instance;
-        }
-
         protected override XmlSerializer Serializer => new XmlSerializer(typeof(CinematicCameraConfig));
-
-        public override void ResetToDefault()
-        {
-            CopyFrom(CreateDefault());
-        }
+        
         protected override void CopyFrom(CinematicCameraConfig other)
         {
             ConfigVersion = other.ConfigVersion;
@@ -80,8 +59,9 @@ namespace CinematicCamera
             DepthOfFieldStart = other.DepthOfFieldStart;
             DepthOfFieldEnd = other.DepthOfFieldEnd;
         }
-        protected static string SavePathStatic { get; } = Path.Combine(ConfigDir, "CinematicCamera");
-        protected static string OldSavePathStatic { get; } = Path.Combine(ConfigDir, "RTSCamera");
+
+        protected static string SavePathStatic { get; } = Path.Combine(ConfigPath.ConfigDir, CinematicCameraSubModule.ModuleId);
+        protected static string OldSavePathStatic { get; } = Path.Combine(ConfigPath.ConfigDir, "RTSCamera");
 
         protected override string SaveName => Path.Combine(SavePathStatic, nameof(CinematicCameraConfig) + ".xml");
 
