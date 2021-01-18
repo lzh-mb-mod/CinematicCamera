@@ -1,5 +1,6 @@
-﻿using RTSCamera;
-using System.Linq;
+﻿using System.Linq;
+using MissionLibrary.Extension;
+using MissionSharedLibrary;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -12,8 +13,9 @@ namespace CinematicCamera
         {
             base.OnSubModuleLoad();
 
+            Utility.ShouldDisplayMessage = false;
             Module.CurrentModule.GlobalTextManager.LoadGameTexts(BasePath.Name + "Modules/CinematicCamera/ModuleData/module_strings.xml");
-            RTSCameraExtension.AddExtension(new CinematicCameraExtension());
+            MissionExtensionCollection.AddExtension(new CinematicCameraExtension());
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)

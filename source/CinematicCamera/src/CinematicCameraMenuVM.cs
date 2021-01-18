@@ -1,4 +1,4 @@
-﻿using RTSCamera.View.Basic;
+﻿using MissionSharedLibrary.View;
 using System;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;

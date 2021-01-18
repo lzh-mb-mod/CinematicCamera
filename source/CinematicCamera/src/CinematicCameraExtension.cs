@@ -1,28 +1,28 @@
-﻿using RTSCamera;
+﻿using MissionLibrary.Extension;
 using System.Collections.Generic;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
 {
-    public class CinematicCameraExtension : RTSCameraExtension
+    public class CinematicCameraExtension : IMissionExtension
     {
-        public override void OpenModMenu(Mission mission)
+        public void OpenModMenu(Mission mission)
         {
         }
 
-        public override void CloseModMenu(Mission mission)
+        public void CloseModMenu(Mission mission)
         {
             mission.GetMissionBehaviour<ModifyCameraLogic>()?.UpdateDepthOfFieldParameters();
             mission.GetMissionBehaviour<ModifyCameraLogic>()?.UpdateDepthOfFieldDistance();
         }
 
-        public override void OpenExtensionMenu(Mission mission)
+        public void OpenExtensionMenu(Mission mission)
         {
             mission.GetMissionBehaviour<CinematicCameraMenuView>()?.ActivateMenu();
         }
 
-        public override List<MissionBehaviour> CreateMissionBehaviours(Mission mission)
+        public List<MissionBehaviour> CreateMissionBehaviours(Mission mission)
         {
             return new List<MissionBehaviour>
             {
@@ -32,8 +32,8 @@ namespace CinematicCamera
             };
         }
 
-        public override string ExtensionName => "Cinematic Camera";
+        public string ExtensionName => "Cinematic Camera";
 
-        public override string ButtonName => GameTexts.FindText("str_extension_cinematic_camera").ToString();
+        public string ButtonName => GameTexts.FindText("str_extension_cinematic_camera").ToString();
     }
 }

@@ -1,4 +1,4 @@
-﻿using RTSCamera.View.Basic;
+﻿using MissionSharedLibrary.View;
 
 namespace CinematicCamera
 {

@@ -1,12 +1,12 @@
-﻿using RTSCamera;
-using RTSCamera.Config.Basic;
+﻿using MissionSharedLibrary;
+using MissionSharedLibrary.Config;
 using System;
 using System.IO;
 using System.Xml.Serialization;
 
 namespace CinematicCamera
 {
-    public class CinematicCameraConfig : RTSCameraConfigBase<CinematicCameraConfig>
+    public class CinematicCameraConfig : MissionConfigBase<CinematicCameraConfig>
     {
         private static CinematicCameraConfig _instance;
 
@@ -61,7 +61,7 @@ namespace CinematicCamera
             return _instance;
         }
 
-        protected override XmlSerializer serializer => new XmlSerializer(typeof(CinematicCameraConfig));
+        protected override XmlSerializer Serializer => new XmlSerializer(typeof(CinematicCameraConfig));
 
         public override void ResetToDefault()
         {
@@ -80,7 +80,16 @@ namespace CinematicCamera
             DepthOfFieldStart = other.DepthOfFieldStart;
             DepthOfFieldEnd = other.DepthOfFieldEnd;
         }
-        protected override string SaveName => Path.Combine(SavePath, nameof(CinematicCameraConfig) + ".xml");
-        protected override string[] OldNames { get; } = { Path.Combine(OldSavePath, "CinematicCameraConfig.xml") };
+        protected static string SavePathStatic { get; } = Path.Combine(ConfigDir, "CinematicCamera");
+        protected static string OldSavePathStatic { get; } = Path.Combine(ConfigDir, "RTSCamera");
+
+        protected override string SaveName => Path.Combine(SavePathStatic, nameof(CinematicCameraConfig) + ".xml");
+
+        protected override string OldSavePath => OldSavePathStatic;
+        protected override string[] OldNames { get; } =
+        {
+            Path.Combine(OldSavePathStatic, "CinematicCameraConfig.xml"),
+            Path.Combine(OldSavePathStatic, "CinematicCameraConfig.xml")
+        };
     }
 }
