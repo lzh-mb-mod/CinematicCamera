@@ -29,7 +29,7 @@ namespace CinematicCamera
 
         public float CameraFov = 65f;
 
-        public bool RotateSmoothMode = false;
+        public bool RotateSmoothMode = true;
 
         //public float Zoom = 1.0f;
 
