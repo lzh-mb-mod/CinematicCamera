@@ -2,7 +2,7 @@
 <Module>
 	<Name value = "Cinematic Camera"/>
 	<Id value = "CinematicCamera"/>
-	<Version value = "e1.0.4"/>
+	<Version value = "e1.0.5"/>
 	<SingleplayerModule value="true"/>
 	<MultiplayerModule value="false"/>
 	<DependedModules>
