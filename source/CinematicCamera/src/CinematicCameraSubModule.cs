@@ -1,9 +1,8 @@
-﻿using System.Linq;
-using MissionLibrary;
+﻿using MissionLibrary;
 using MissionLibrary.Controller;
-using MissionLibrary.Extension;
 using MissionLibrary.View;
 using MissionSharedLibrary;
+using MissionSharedLibrary.Utilities;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -31,7 +30,7 @@ namespace CinematicCamera
 
         private void Initialize()
         {
-            if (!Initializer.Initialize())
+            if (!Initializer.Initialize(ModuleId))
                 return;
         }
 
