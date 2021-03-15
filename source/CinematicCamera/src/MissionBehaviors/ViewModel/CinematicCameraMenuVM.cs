@@ -187,7 +187,7 @@ namespace CinematicCamera
                 });
 
             var scene = Mission.Current.Scene;
-            DepthOfFieldDistance = new NumericVM(GameTexts.FindText("str_cinematic_camera_depth_of_field_distance").ToString(), _config.DepthOfFieldDistance, 0, 100, false,
+            DepthOfFieldDistance = new NumericVM(GameTexts.FindText("str_cinematic_camera_depth_of_field_distance").ToString(), _config.DepthOfFieldDistance, 0, 100f, false,
                 v =>
                 {
                     _config.DepthOfFieldDistance = v;

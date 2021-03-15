@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CinematicCamera.MissionBehaviors;
+using System.Collections.Generic;
 using MissionLibrary.Controller;
 using MissionSharedLibrary.Controller;
 using TaleWorlds.MountAndBlade;

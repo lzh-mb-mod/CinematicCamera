@@ -46,7 +46,7 @@
                           </Children>
                         </SliderWidget>
 
-                        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
+                        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="100" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
 
                       </Children>
                     </ListPanel>
@@ -132,7 +132,7 @@
                           </Children>
                         </SliderWidget>
 
-                        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
+                        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
 
                       </Children>
                     </ListPanel>
@@ -166,7 +166,7 @@
                           </Children>
                         </SliderWidget>
 
-                        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
+                        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
 
                       </Children>
                     </ListPanel>
@@ -197,7 +197,7 @@
                       </Children>
                     </SliderWidget>
 
-                    <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
+                    <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
 
                   </Children>
                 </ListPanel>
@@ -219,7 +219,7 @@
                       </Children>
                     </SliderWidget>
 
-                    <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
+                    <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
 
                   </Children>
                 </ListPanel>
@@ -240,7 +240,7 @@
                       </Children>
                     </SliderWidget>
 
-                    <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
+                    <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="50" MarginLeft="20" VerticalAlignment="Center" Brush="SPOptions.Slider.Value.Text" IsEnabled="false" Text="@OptionValueAsString" />
 
                   </Children>
                 </ListPanel>

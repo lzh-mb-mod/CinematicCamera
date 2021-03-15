@@ -1,4 +1,5 @@
-﻿using MissionLibrary;
+﻿using CinematicCamera.Config.HotKey;
+using MissionLibrary;
 using MissionLibrary.Controller;
 using MissionLibrary.View;
 using MissionSharedLibrary;
@@ -46,7 +47,8 @@ namespace CinematicCamera
         {
             if (!Initializer.SecondInitialize())
                 return false;
-            
+
+            CinematicCameraGameKeyCategory.RegisterGameKeyCategory();
             Global.GetProvider<AMissionStartingManager>().AddHandler(new MissionStartingHandler());
             var menuClassCollection = AMenuManager.Get().MenuClassCollection;
             menuClassCollection.AddOptionClass(CinematicCameraOptionClassFactory.CreateOptionClassProvider(menuClassCollection));

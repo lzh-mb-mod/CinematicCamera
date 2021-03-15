@@ -1,6 +1,6 @@
 ﻿using MissionSharedLibrary.View;
 
-namespace CinematicCamera
+namespace CinematicCamera.MissionBehaviors
 {
     public class CinematicCameraMenuView : MissionMenuViewBase
     {

@@ -1,4 +1,6 @@
-﻿using MissionLibrary.Event;
+﻿using CinematicCamera.Config.HotKey;
+using MissionLibrary.Event;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
@@ -21,6 +23,58 @@ namespace CinematicCamera
 
             Mission.OnMainAgentChanged -= Mission_OnMainAgentChanged;
             MissionEvent.MainAgentWillBeChangedToAnotherOne -= MainAgentWillBeChangedToAnotherOne;
+        }
+
+        public override void OnMissionTick(float dt)
+        {
+            base.OnMissionTick(dt);
+
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.TogglePlayerInvulnerable)
+                .IsKeyPressed(Mission.InputManager))
+            {
+                _config.PlayerInvulnerable = !_config.PlayerInvulnerable;
+                UpdateInvulnerable(_config.PlayerInvulnerable);
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.IncreaseDepthOfFieldDistance)
+                .IsKeyDown(Mission.InputManager))
+            {
+                _config.DepthOfFieldDistance = MathF.Clamp(_config.DepthOfFieldDistance + 0.05f, 0, 1000);
+                ModifyCameraHelper.UpdateDepthOfFieldDistance();
+                ModifyCameraHelper.UpdateDepthOfFieldParameters();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.DecreaseDepthOfFieldDistance)
+                .IsKeyDown(Mission.InputManager))
+            {
+                _config.DepthOfFieldDistance = MathF.Clamp(_config.DepthOfFieldDistance - 0.05f, 0, 1000);
+                ModifyCameraHelper.UpdateDepthOfFieldDistance();
+                ModifyCameraHelper.UpdateDepthOfFieldParameters();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.IncreaseDepthOfFieldStart)
+                .IsKeyDown(Mission.InputManager))
+            {
+                _config.DepthOfFieldStart = MathF.Clamp(_config.DepthOfFieldStart + 0.05f, 0, 1000);
+                ModifyCameraHelper.UpdateDepthOfFieldDistance();
+                ModifyCameraHelper.UpdateDepthOfFieldParameters();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.DecreaseDepthOfFieldStart)
+                .IsKeyDown(Mission.InputManager))
+            {
+                _config.DepthOfFieldStart = MathF.Clamp(_config.DepthOfFieldStart - 0.05f, 0, 1000);
+                ModifyCameraHelper.UpdateDepthOfFieldDistance();
+                ModifyCameraHelper.UpdateDepthOfFieldParameters();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.IncreaseDepthOfFieldEnd)
+                .IsKeyDown(Mission.InputManager))
+            {
+                _config.DepthOfFieldEnd = MathF.Clamp(_config.DepthOfFieldEnd + 0.05f, 0, 1000);
+                ModifyCameraHelper.UpdateDepthOfFieldParameters();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.DecreaseDepthOfFieldEnd)
+                .IsKeyDown(Mission.InputManager))
+            {
+                _config.DepthOfFieldEnd = MathF.Clamp(_config.DepthOfFieldEnd - 0.05f, 0, 1000);
+                ModifyCameraHelper.UpdateDepthOfFieldParameters();
+            }
         }
 
         private void MainAgentWillBeChangedToAnotherOne(Agent newAgent)

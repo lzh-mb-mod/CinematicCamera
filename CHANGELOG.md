@@ -1,4 +1,9 @@
 # Changelog
+
+## [e1.0.6] - 2020-03-16
+### Added
+- Add hot key for options.
+
 ## [e1.0.3] - 2020-10-19
 ### Fixed
 - Keep compatible with RTS Camera.

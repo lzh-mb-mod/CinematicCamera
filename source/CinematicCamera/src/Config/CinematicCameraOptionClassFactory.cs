@@ -1,4 +1,5 @@
-﻿using MissionLibrary.Provider;
+﻿using CinematicCamera.MissionBehaviors;
+using MissionLibrary.Provider;
 using MissionLibrary.View;
 using MissionSharedLibrary.Provider;
 using MissionSharedLibrary.View.ViewModelCollection;

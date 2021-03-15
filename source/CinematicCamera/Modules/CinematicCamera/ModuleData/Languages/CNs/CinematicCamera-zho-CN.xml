@@ -19,5 +19,24 @@
     <string id="CinematicCamera_depthoffielddistance" text="景深焦距" />
     <string id="CinematicCamera_depthoffieldstart" text="景深开始参数" />
     <string id="CinematicCamera_depthoffieldend" text="景深结束参数" />
+
+
+    <string id="CinematicCamera_hotkey_category" text="电影镜头快捷键" />
+    <string id="CinematicCamera_toggle_player_invulnerable" text="切换玩家角色无敌" />
+    <string id="CinematicCamera_toggle_player_invulnerable_hint" text="切换玩家角色无敌。" />
+    <string id="CinematicCamera_increase_dof_distance" text="增加焦距" />
+    <string id="CinematicCamera_increase_dof_distance_hint" text="增加景深的焦距。" />
+    <string id="CinematicCamera_decrease_dof_distance" text="减小焦距" />
+    <string id="CinematicCamera_decrease_dof_distance_hint" text="减小景深的焦距。" />
+
+    <string id="CinematicCamera_increase_dof_start" text="增加景深起始位置" />
+    <string id="CinematicCamera_increase_dof_start_hint" text="增加景深起始位置。" />
+    <string id="CinematicCamera_decrease_dof_start" text="减小景深起始位置" />
+    <string id="CinematicCamera_decrease_dof_start_hint" text="减小景深起始位置。" />
+
+    <string id="CinematicCamera_increase_dof_end" text="增加景深结束位置" />
+    <string id="CinematicCamera_increase_dof_end_hint" text="增加景深结束位置。" />
+    <string id="CinematicCamera_decrease_dof_end" text="减小景深结束位置" />
+    <string id="CinematicCamera_decrease_dof_end_hint" text="减小景深结束位置。" />
   </strings>
 </base>
