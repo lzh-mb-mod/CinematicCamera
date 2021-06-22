@@ -5,7 +5,7 @@ using MissionLibrary.View;
 using MissionSharedLibrary;
 using MissionSharedLibrary.Utilities;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
+using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
@@ -19,14 +19,15 @@ namespace CinematicCamera
 
             Initialize();
             Utility.ShouldDisplayMessage = false;
-            Module.CurrentModule.GlobalTextManager.LoadGameTexts(BasePath.Name + "Modules/CinematicCamera/ModuleData/module_strings.xml");
+            Module.CurrentModule.GlobalTextManager.LoadGameTexts(
+                ModuleHelper.GetXmlPath(ModuleId, "module_strings"));
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
         {
             base.OnGameStart(game, gameStarterObject);
 
-            game.GameTextManager.LoadGameTexts(BasePath.Name + "Modules/CinematicCamera/ModuleData/module_strings.xml");
+            game.GameTextManager.LoadGameTexts(ModuleHelper.GetXmlPath(ModuleId, "module_strings"));
         }
 
         private void Initialize()
