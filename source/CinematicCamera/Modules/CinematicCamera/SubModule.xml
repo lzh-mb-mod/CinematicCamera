@@ -2,16 +2,16 @@
 <Module>
   <Name value="Cinematic Camera"/>
   <Id value="CinematicCamera"/>
-  <Version value="e1.0.8"/>
+  <Version value="e1.1.0"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <DependedModules>
-    <DependedModule Id="Native" DependentVersion="e1.6.1" />
-    <DependedModule Id="SandBoxCore" DependentVersion="e1.6.1" />
-    <DependedModule Id="Sandbox" DependentVersion="e1.6.1" />
-    <DependedModule Id="CustomBattle" DependentVersion="e1.6.1"/>
-    <DependedModule Id="StoryMode" DependentVersion="e1.6.1" />
-    <DependedModule Id="RTSCamera" DependentVersion="e3.10.0" />
+    <DependedModule Id="Native" DependentVersion="e1.8.0" />
+    <DependedModule Id="SandBoxCore" DependentVersion="e1.8.0" />
+    <DependedModule Id="Sandbox" DependentVersion="e1.8.0" />
+    <DependedModule Id="CustomBattle" DependentVersion="e1.8.0"/>
+    <DependedModule Id="StoryMode" DependentVersion="e1.8.0" />
+    <DependedModule Id="RTSCamera" DependentVersion="e4.1.0" />
   </DependedModules>
   <SubModules>
     <SubModule>
@@ -25,5 +25,12 @@
     </SubModule>
   </SubModules>
 
-  <Xmls/>
+  <Xmls>
+    <XmlNode>
+      <XmlName id="GameText" path="module_strings"/>
+    </XmlNode>
+    <XmlNode>
+      <XmlName id="GameText" path="MissionLibrary"/>
+    </XmlNode>
+  </Xmls>
 </Module>

@@ -8,7 +8,7 @@ namespace CinematicCamera
     {
         private static readonly CinematicCameraConfig Config = CinematicCameraConfig.Get();
 
-        public static void OnBehaviourInitialize()
+        public static void OnBehaviorInitialize()
         {
             if (ACameraControllerManager.Get().Instance != null)
             {

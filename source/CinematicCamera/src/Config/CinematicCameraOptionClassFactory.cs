@@ -23,7 +23,7 @@ namespace CinematicCamera
                 cameraOptionCategory.AddOption(new ActionOptionViewModel(GameTexts.FindText("str_cinematic_camera_open_menu"), null,
                     () =>
                     {
-                        Mission.Current.GetMissionBehaviour<CinematicCameraMenuView>()?.ActivateMenu();
+                        Mission.Current.GetMissionBehavior<CinematicCameraMenuView>()?.ActivateMenu();
                     }));
                 optionClass.AddOptionCategory(0, cameraOptionCategory);
 

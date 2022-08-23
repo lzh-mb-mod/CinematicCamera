@@ -19,15 +19,14 @@ namespace CinematicCamera
 
             Initialize();
             Utility.ShouldDisplayMessage = false;
-            Module.CurrentModule.GlobalTextManager.LoadGameTexts(
-                ModuleHelper.GetXmlPath(ModuleId, "module_strings"));
+            Module.CurrentModule.GlobalTextManager.LoadGameTexts();
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
         {
             base.OnGameStart(game, gameStarterObject);
 
-            game.GameTextManager.LoadGameTexts(ModuleHelper.GetXmlPath(ModuleId, "module_strings"));
+            game.GameTextManager.LoadGameTexts();
         }
 
         private void Initialize()
@@ -58,11 +57,11 @@ namespace CinematicCamera
             return true;
         }
 
-        public override void OnMissionBehaviourInitialize(Mission mission)
+        public override void OnMissionBehaviorInitialize(Mission mission)
         {
-            base.OnMissionBehaviourInitialize(mission);
+            base.OnMissionBehaviorInitialize(mission);
 
-            ModifyCameraHelper.OnBehaviourInitialize();
+            ModifyCameraHelper.OnBehaviorInitialize();
         }
     }
 }
