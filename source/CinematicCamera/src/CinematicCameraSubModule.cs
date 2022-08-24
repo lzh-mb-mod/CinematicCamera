@@ -58,9 +58,9 @@ namespace CinematicCamera
             return true;
         }
 
-        public override void OnMissionBehaviourInitialize(Mission mission)
+        public override void OnMissionBehaviorInitialize(Mission mission)
         {
-            base.OnMissionBehaviourInitialize(mission);
+            base.OnMissionBehaviorInitialize(mission);
 
             ModifyCameraHelper.OnBehaviourInitialize();
         }

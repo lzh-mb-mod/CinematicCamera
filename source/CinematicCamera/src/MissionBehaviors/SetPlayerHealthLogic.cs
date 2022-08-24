@@ -9,17 +9,17 @@ namespace CinematicCamera
     {
         private readonly CinematicCameraConfig _config = CinematicCameraConfig.Get();
 
-        public override void OnBehaviourInitialize()
+        public override void OnBehaviorInitialize()
         {
-            base.OnBehaviourInitialize();
+            base.OnBehaviorInitialize();
 
             Mission.OnMainAgentChanged += Mission_OnMainAgentChanged;
             MissionEvent.MainAgentWillBeChangedToAnotherOne += MainAgentWillBeChangedToAnotherOne;
         }
 
-        public override void OnRemoveBehaviour()
+        public override void OnRemoveBehavior()
         {
-            base.OnRemoveBehaviour();
+            base.OnRemoveBehavior();
 
             Mission.OnMainAgentChanged -= Mission_OnMainAgentChanged;
             MissionEvent.MainAgentWillBeChangedToAnotherOne -= MainAgentWillBeChangedToAnotherOne;

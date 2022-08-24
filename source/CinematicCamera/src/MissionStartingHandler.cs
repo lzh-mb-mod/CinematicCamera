@@ -1,7 +1,7 @@
 ﻿using CinematicCamera.MissionBehaviors;
-using System.Collections.Generic;
 using MissionLibrary.Controller;
 using MissionSharedLibrary.Controller;
+using System.Collections.Generic;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Missions;
 
@@ -11,7 +11,7 @@ namespace CinematicCamera
     {
         public override void OnCreated(MissionView entranceView)
         {
-            List<MissionBehaviour> list = new List<MissionBehaviour>
+            List<MissionBehavior> list = new List<MissionBehavior>
             {
                 new SetPlayerHealthLogic(),
                 new CinematicCameraMenuView()
@@ -20,7 +20,7 @@ namespace CinematicCamera
 
             foreach (var missionBehaviour in list)
             {
-                MissionStartingManager.AddMissionBehaviour(entranceView, missionBehaviour);
+                MissionStartingManager.AddMissionBehavior(entranceView, missionBehaviour);
             }
         }
 

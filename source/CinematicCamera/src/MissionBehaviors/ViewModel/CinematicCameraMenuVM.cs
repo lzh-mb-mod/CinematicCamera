@@ -11,7 +11,7 @@ namespace CinematicCamera
         private readonly CinematicCameraConfig _config = CinematicCameraConfig.Get();
 
         private readonly SetPlayerHealthLogic _setPlayerHealthLogic =
-            Mission.Current.GetMissionBehaviour<SetPlayerHealthLogic>();
+            Mission.Current.GetMissionBehavior<SetPlayerHealthLogic>();
 
         private NumericVM _verticalFov;
         //private NumericVM _zoom;
