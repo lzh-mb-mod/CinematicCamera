@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
   <tags>
     <tag language="简体中文" />
@@ -38,5 +38,10 @@
     <string id="CinematicCamera_increase_dof_end_hint" text="增加景深结束位置。" />
     <string id="CinematicCamera_decrease_dof_end" text="减小景深结束位置" />
     <string id="CinematicCamera_decrease_dof_end_hint" text="减小景深结束位置。" />
+
+    <string id="CinematicCamera_increase_fov" text="增加视野" />
+    <string id="CinematicCamera_increase_fov_hint" text="增加视野。" />
+    <string id="CinematicCamera_decrease_fov" text="减小视野" />
+    <string id="CinematicCamera_decrease_fov_hint" text="减小视野。" />
   </strings>
 </base>
