@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
   <strings>
     <string id="str_cinematic_camera_cinematic_camera" text="{=CinematicCamera_cinematiccamera}Cinematic Camera" />
@@ -35,5 +35,10 @@
     <string id="str_key_description.CinematicCameraHotKey_ShowIndicators" text="{=CinematicCamera_increase_dof_end_hint}Increase Depth Of Field End Position." />
     <string id="str_key_name.CinematicCameraHotKey_InitiateAllChat" text="{=CinematicCamera_decrease_dof_end}Decrease DOF End" />
     <string id="str_key_description.CinematicCameraHotKey_InitiateAllChat" text="{=CinematicCamera_decrease_dof_end_hint}Decrease Depth Of Field End Position." />
+
+    <string id="str_key_name.CinematicCameraHotKey_InitiateTeamChat" text="{=CinematicCamera_increase_fov}Increase FOV" />
+    <string id="str_key_description.CinematicCameraHotKey_InitiateTeamChat" text="{=CinematicCamera_increase_fov_hint}Increase Field of View." />
+    <string id="str_key_name.CinematicCameraHotKey_FinalizeChat" text="{=CinematicCamera_decrease_fov}Decrease FOV" />
+    <string id="str_key_description.CinematicCameraHotKey_FinalizeChat" text="{=CinematicCamera_decrease_fov_hint}Decrease Field of View." />
   </strings>
 </base>

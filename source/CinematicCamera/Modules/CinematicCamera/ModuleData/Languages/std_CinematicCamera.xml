@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
   <tags>
     <tag language="English" />
@@ -39,6 +39,10 @@
     <string id="CinematicCamera_increase_dof_end_hint" text="Increase Depth Of Field End Position." />
     <string id="CinematicCamera_decrease_dof_end" text="Decrease DOF End" />
     <string id="CinematicCamera_decrease_dof_end_hint" text="Decrease Depth Of Field End Position." />
-    
+
+    <string id="CinematicCamera_increase_fov" text="Increase FOV" />
+    <string id="CinematicCamera_increase_fov_hint" text="Increase Field of View." />
+    <string id="CinematicCamera_decrease_fov" text="Decrease FOV" />
+    <string id="CinematicCamera_decrease_fov_hint" text="Decrease Field of View." />
   </strings>
 </base>

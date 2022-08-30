@@ -75,6 +75,17 @@ namespace CinematicCamera
                 _config.DepthOfFieldEnd = MathF.Clamp(_config.DepthOfFieldEnd - 0.05f, 0, 1000);
                 ModifyCameraHelper.UpdateDepthOfFieldParameters();
             }
+
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.IncreaseFieldOfView).IsKeyDown(Mission.InputManager))
+            {
+                _config.CameraFov = MathF.Clamp(_config.CameraFov + 0.05f, 1, 179);
+                ModifyCameraHelper.UpdateFov();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.DecreaseFieldOfView).IsKeyDown(Mission.InputManager))
+            {
+                _config.CameraFov = MathF.Clamp(_config.CameraFov - 0.05f, 1, 179);
+                ModifyCameraHelper.UpdateFov();
+            }
         }
 
         private void MainAgentWillBeChangedToAnotherOne(Agent newAgent)

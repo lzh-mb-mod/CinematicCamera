@@ -16,6 +16,8 @@ namespace CinematicCamera.Config.HotKey
         DecreaseDepthOfFieldStart,
         IncreaseDepthOfFieldEnd,
         DecreaseDepthOfFieldEnd,
+        IncreaseFieldOfView,
+        DecreaseFieldOfView,
         NumberOfGameKeyEnums
     }
     public class CinematicCameraGameKeyCategory
@@ -73,6 +75,18 @@ namespace CinematicCamera.Config.HotKey
                 CategoryId, new List<InputKey>
                 {
                     InputKey.Slash,
+                    InputKey.Minus
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.IncreaseFieldOfView, nameof(GameKeyEnum.IncreaseFieldOfView),
+                CategoryId, new List<InputKey>
+                {
+                    InputKey.BackSlash,
+                    InputKey.Equals
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.DecreaseFieldOfView, nameof(GameKeyEnum.DecreaseFieldOfView),
+                CategoryId, new List<InputKey>
+                {
+                    InputKey.BackSlash,
                     InputKey.Minus
                 }));
             return result;
