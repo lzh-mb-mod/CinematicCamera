@@ -208,6 +208,18 @@ namespace CinematicCamera
                 });
         }
 
+        public override void RefreshValues()
+        {
+            OnPropertyChanged(nameof(PlayerInvulnerable));
+            OnPropertyChanged(nameof(RotateSmoothMode));
+            _verticalFov.OptionValue = _config.CameraFov;
+            _speedFactor.OptionValue = _config.SpeedFactor;
+            _verticalSpeedFactor.OptionValue = _config.VerticalSpeedFactor;
+            _depthOfFieldDistance.OptionValue = _config.DepthOfFieldDistance;
+            _depthOfFieldStart.OptionValue = _config.DepthOfFieldStart;
+            _depthOfFieldEnd.OptionValue = _config.DepthOfFieldEnd;
+        }
+
         public override void CloseMenu()
         {
             _config.Serialize();
