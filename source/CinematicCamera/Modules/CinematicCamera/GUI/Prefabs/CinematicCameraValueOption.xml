@@ -1,0 +1,39 @@
+﻿<Prefab>
+	<Parameters>
+		<Parameter Name="GamepadNavigationIndex" DefaultValue="-1" />
+	</Parameters>
+  <Constants>
+
+  </Constants>
+  <Window>
+    <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="42" HorizontalAlignment="Right" PositionXOffset="-18">
+      <Children>
+
+        <!--Property Name-->
+        <RichTextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="200" HorizontalAlignment="Right" VerticalAlignment="Center" PositionXOffset="35" Brush="PhotoMode.Property.Text" Text="@Name" />
+
+        <!--Slider-->
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="367" SuggestedHeight="25" HorizontalAlignment="Right" VerticalAlignment="Center" MarginLeft="50" >
+          <Children>
+
+            <SliderWidget Id="ScrollBar" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="338" SuggestedHeight="25" VerticalAlignment="Center" Filler="Filler" Handle="SliderHandle" MaxValueFloat="@Max" MinValueFloat="@Min" ValueFloat="@OptionValue" IsDiscrete="false">
+              <Children>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="350" SuggestedHeight="25" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="PhotoMode\photo_mode_slider_bed" IsEnabled="false" />
+                <Widget Id="Filler" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="345" SuggestedHeight="25" VerticalAlignment="Center" Sprite="photo_mode_slider_fill_9" ClipContents="true">
+                  <Children>
+                    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="250" SuggestedHeight="17" HorizontalAlignment="Right" VerticalAlignment="Center" Sprite="PhotoMode\photo_mode_slider_fill_glow"/>
+                  </Children>
+                </Widget>
+                <ImageWidget Id="SliderHandle" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="11" SuggestedHeight="27" HorizontalAlignment="Left" VerticalAlignment="Center" Brush="PhotoMde.Options.SliderHandle" DoNotAcceptEvents="true" GamepadNavigationIndex="*GamepadNavigationIndex"/>
+
+                <RichTextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Left" VerticalAlignment="Center" PositionXOffset="357" Brush="PhotoMode.Property.Text" Text="@OptionValueAsString"/>
+              </Children>
+            </SliderWidget>
+
+          </Children>
+        </Widget>
+
+      </Children>
+    </ListPanel>
+  </Window>
+</Prefab>

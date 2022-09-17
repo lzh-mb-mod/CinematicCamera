@@ -2,6 +2,7 @@
 using MissionLibrary.Provider;
 using MissionLibrary.View;
 using MissionSharedLibrary.Provider;
+using MissionSharedLibrary.View;
 using MissionSharedLibrary.View.ViewModelCollection;
 using MissionSharedLibrary.View.ViewModelCollection.Options;
 using TaleWorlds.Core;
@@ -23,6 +24,7 @@ namespace CinematicCamera
                 cameraOptionCategory.AddOption(new ActionOptionViewModel(GameTexts.FindText("str_cinematic_camera_open_menu"), null,
                     () =>
                     {
+                        Mission.Current.GetMissionBehavior<OptionView>()?.DeactivateMenu();
                         Mission.Current.GetMissionBehavior<CinematicCameraMenuView>()?.ActivateMenu();
                     }));
                 optionClass.AddOptionCategory(0, cameraOptionCategory);
