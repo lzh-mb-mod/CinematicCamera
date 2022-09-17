@@ -86,6 +86,11 @@ namespace CinematicCamera
                 _config.CameraFov = MathF.Clamp(_config.CameraFov - 0.05f, 1, 179);
                 ModifyCameraHelper.UpdateFov();
             }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.ResetFieldOfView).IsKeyDown(Mission.InputManager))
+            {
+                _config.CameraFov = 65.0f;
+                ModifyCameraHelper.UpdateFov();
+            }
         }
 
         private void MainAgentWillBeChangedToAnotherOne(Agent newAgent)
@@ -109,6 +114,7 @@ namespace CinematicCamera
                 return;
             var agent = Mission.MainAgent;
             agent.SetMortalityState(invulnerable ? Agent.MortalityState.Immortal : Agent.MortalityState.Mortal);
+            agent.MountAgent?.SetMortalityState(invulnerable ? Agent.MortalityState.Immortal : Agent.MortalityState.Mortal);
         }
     }
 }
