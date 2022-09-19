@@ -16,6 +16,7 @@ namespace CinematicCamera
         {
             return IdProviderCreator.Create(() =>
             {
+                var menuManager = AMenuManager.Get();
                 var optionClass = new OptionClass(CinematicCameraSubModule.ModuleId,
                     GameTexts.FindText("str_cinematic_camera_cinematic_camera"), menuClassCollection);
                 var cameraOptionCategory =
@@ -24,7 +25,7 @@ namespace CinematicCamera
                 cameraOptionCategory.AddOption(new ActionOptionViewModel(GameTexts.FindText("str_cinematic_camera_open_menu"), null,
                     () =>
                     {
-                        Mission.Current.GetMissionBehavior<OptionView>()?.DeactivateMenu();
+                        menuManager.RequestToCloseMenu();
                         Mission.Current.GetMissionBehavior<CinematicCameraMenuView>()?.ActivateMenu();
                     }));
                 optionClass.AddOptionCategory(0, cameraOptionCategory);
