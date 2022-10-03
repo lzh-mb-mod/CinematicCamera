@@ -9,8 +9,8 @@
   <string id="str_cinematic_camera_reset" text="{=CinematicCamera_reset}Reset" />
   <string id="str_cinematic_camera_zoom" text="{=CinematicCamera_zoom}Zoom" />
   <string id="str_cinematic_camera_rotate_smooth_mode" text="{=CinematicCamera_rotatesmoothmode}Rotate Smooth Mode" />
-  <string id="str_cinematic_camera_speed_factor" text="{=CinematicCamera_speedfactor}Movement Speed Factor" />
-  <string id="str_cinematic_camera_vertical_speed_factor" text="{=CinematicCamera_verticalspeedfactor}Vertical Movement Speed Factor" />
+  <string id="str_cinematic_camera_speed_factor" text="{=CinematicCamera_speedfactor}Camera Speed Factor" />
+  <string id="str_cinematic_camera_vertical_speed_factor" text="{=CinematicCamera_verticalspeedfactor}Camera Vertical Speed Factor" />
   <string id="str_cinematic_camera_depth_of_field_distance" text="{=CinematicCamera_depthoffielddistance}Depth of Field Distance" />
   <string id="str_cinematic_camera_depth_of_field_start" text="{=CinematicCamera_depthoffieldstart}Depth of Field Focus Start" />
   <string id="str_cinematic_camera_depth_of_field_End" text="{=CinematicCamera_depthoffieldend}Depth of Field Focus End" />
@@ -37,5 +37,7 @@
   <string id="str_key_name.CinematicCameraHotKey_InitiateTeamChat" text="{=CinematicCamera_increase_fov}Increase FOV" />
   <string id="str_key_description.CinematicCameraHotKey_InitiateTeamChat" text="{=CinematicCamera_increase_fov_hint}Increase Field of View." />
   <string id="str_key_name.CinematicCameraHotKey_FinalizeChat" text="{=CinematicCamera_decrease_fov}Decrease FOV" />
-  <string id="str_key_description.CinematicCameraHotKey_FinalizeChat" text="{=CinematicCamera_decrease_fov_hint}Decrease Field of View." />
+  <string id="str_key_description.CinematicCameraHotKey_FinalizeChat" text="{=CinematicCamera_decrease_fov_hint}Decrease Field of View." />  
+  <string id="str_key_name.CinematicCameraHotKey_Attack" text="{=CinematicCamera_reset_fov}Reset FOV" />  
+  <string id="str_key_description.CinematicCameraHotKey_Attack" text="{=CinematicCamera_reset_fov_hint}Reset Field of View." />
 </strings>
