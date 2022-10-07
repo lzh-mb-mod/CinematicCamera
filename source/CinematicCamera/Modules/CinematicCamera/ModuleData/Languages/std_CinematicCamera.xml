@@ -44,5 +44,7 @@
     <string id="CinematicCamera_increase_fov_hint" text="Increase Field of View." />
     <string id="CinematicCamera_decrease_fov" text="Decrease FOV" />
     <string id="CinematicCamera_decrease_fov_hint" text="Decrease Field of View." />
+    <string id="CinematicCamera_reset_fov" text="Reset FOV" />
+    <string id="CinematicCamera_reset_fov_hint" text="Reset Field of View." />
   </strings>
 </base>

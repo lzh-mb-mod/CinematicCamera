@@ -43,5 +43,7 @@
     <string id="CinematicCamera_increase_fov_hint" text="增加视野。" />
     <string id="CinematicCamera_decrease_fov" text="减小视野" />
     <string id="CinematicCamera_decrease_fov_hint" text="减小视野。" />
+    <string id="CinematicCamera_reset_fov" text="重置视野" />
+    <string id="CinematicCamera_reset_fov_hint" text="重置视野。" />
   </strings>
 </base>

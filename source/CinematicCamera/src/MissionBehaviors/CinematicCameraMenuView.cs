@@ -1,10 +1,6 @@
 ﻿using MissionSharedLibrary.View;
-using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
-using TaleWorlds.MountAndBlade;
-using TaleWorlds.ScreenSystem;
-using TaleWorlds.TwoDimension;
 
 namespace CinematicCamera.MissionBehaviors
 {
@@ -17,7 +13,7 @@ namespace CinematicCamera.MissionBehaviors
         private static bool _rightButtonDraggingMode;
 
         public CinematicCameraMenuView()
-            : base(25, nameof(CinematicCameraMenuView))
+            : base(25, nameof(CinematicCameraMenuView), false)
         {
         }
 
@@ -33,48 +29,12 @@ namespace CinematicCamera.MissionBehaviors
                 UpdateDragData();
                 UpdateMouseVisibility();
                 DataSource.RefreshValues();
+
+                if (GauntletLayer.Input.IsKeyReleased(InputKey.RightMouseButton) && !_rightButtonDraggingMode
+                    || GauntletLayer.Input.IsHotKeyReleased("Exit"))
+                    DeactivateMenu();
             }
-            base.OnMissionScreenTick(dt);
-        }
 
-        public override void ActivateMenu()
-        {
-            IsActivated = true;
-            DataSource = GetDataSource();
-            if (DataSource == null)
-                return;
-            GauntletLayer = new GauntletLayer(ViewOrderPriority) { IsFocusLayer = false };
-            GauntletLayer.InputRestrictions.SetInputRestrictions();
-            GauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
-            _movie = GauntletLayer.LoadMovie(_movieName, DataSource);
-            SpriteData spriteData = UIResourceManager.SpriteData;
-            TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-            ResourceDepot uiResourceDepot = UIResourceManager.UIResourceDepot;
-            spriteData.SpriteCategories["ui_saveload"]?.Load(resourceContext, uiResourceDepot);
-            MissionScreen.AddLayer(GauntletLayer);
-            ScreenManager.TrySetFocus(GauntletLayer);
-            MissionState.Current.Paused = true;
-        }
-
-        public override void DeactivateMenu()
-        {
-            if (GauntletLayer.Input.IsKeyReleased(InputKey.RightMouseButton) && !_rightButtonDraggingMode
-                || GauntletLayer.Input.IsHotKeyReleased("Exit"))
-            {
-                base.DeactivateMenu();
-            }
-        }
-
-        protected override void OnCloseMenu()
-        {
-            IsActivated = false;
-            GauntletLayer.InputRestrictions.ResetInputRestrictions();
-            MissionScreen.RemoveLayer(GauntletLayer);
-            DataSource.OnFinalize();
-            DataSource = null;
-            _movie = null;
-            GauntletLayer = null;
-            MissionState.Current.Paused = false;
         }
 
         private void UpdateDragData()
