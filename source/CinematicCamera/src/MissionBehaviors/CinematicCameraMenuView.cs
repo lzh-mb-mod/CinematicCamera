@@ -1,4 +1,6 @@
-﻿using MissionSharedLibrary.View;
+﻿using CinematicCamera.Config.HotKey;
+using MissionLibrary.HotKey;
+using MissionSharedLibrary.View;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 
@@ -24,6 +26,17 @@ namespace CinematicCamera.MissionBehaviors
 
         public override void OnMissionScreenTick(float dt)
         {
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.OpenCinematicCameraMenu).IsKeyPressedInOrder(MissionScreen.InputManager))
+            {
+                if (IsActivated)
+                {
+                    DeactivateMenu();
+                }
+                else
+                {
+                    ActivateMenu();
+                }
+            }
             if (IsActivated)
             {
                 UpdateDragData();
@@ -34,7 +47,6 @@ namespace CinematicCamera.MissionBehaviors
                     || GauntletLayer.Input.IsHotKeyReleased("Exit"))
                     DeactivateMenu();
             }
-
         }
 
         private void UpdateDragData()

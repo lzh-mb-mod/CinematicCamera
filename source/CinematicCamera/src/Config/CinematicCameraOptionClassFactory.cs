@@ -5,6 +5,7 @@ using MissionSharedLibrary.Provider;
 using MissionSharedLibrary.View;
 using MissionSharedLibrary.View.ViewModelCollection;
 using MissionSharedLibrary.View.ViewModelCollection.Options;
+using System;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
@@ -12,9 +13,9 @@ namespace CinematicCamera
 {
     public class CinematicCameraOptionClassFactory
     {
-        public static IIdProvider<AOptionClass> CreateOptionClassProvider(IMenuClassCollection menuClassCollection)
+        public static IProvider<AOptionClass> CreateOptionClassProvider(AMenuClassCollection menuClassCollection)
         {
-            return IdProviderCreator.Create(() =>
+            return ProviderCreator.Create(() =>
             {
                 var menuManager = AMenuManager.Get();
                 var optionClass = new OptionClass(CinematicCameraSubModule.ModuleId,
@@ -31,7 +32,7 @@ namespace CinematicCamera
                 optionClass.AddOptionCategory(0, cameraOptionCategory);
 
                 return optionClass;
-            }, CinematicCameraSubModule.ModuleId);
+            }, CinematicCameraSubModule.ModuleId, new Version(1, 0, 0));
         }
     }
 }

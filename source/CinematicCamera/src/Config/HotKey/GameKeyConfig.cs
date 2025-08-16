@@ -8,5 +8,10 @@ namespace CinematicCamera.Config.HotKey
     {
         protected override string SaveName { get; } =
             Path.Combine(ConfigPath.ConfigDir, CinematicCameraSubModule.ModuleId, nameof(GameKeyConfig) + ".xml");
+ 
+        protected override void UpgradeToCurrentVersion()
+        {
+            
+        }
     }
 }

@@ -23,6 +23,8 @@
 
 
     <string id="CinematicCamera_hotkey_category" text="Cinematic Camera Hot Key" />
+    <string id="CinematicCamera_open_cinematic_camera_menu" text="Open Cinematic Camera Menu" />
+    <string id="CinematicCamera_open_cinematic_camera_menu_hint" text="Open Cinematic Camera Menu." />
     <string id="CinematicCamera_toggle_player_invulnerable" text="Toggle Player Invulnerable" />
     <string id="CinematicCamera_toggle_player_invulnerable_hint" text="Toggle Player Invulnerable." />
     <string id="CinematicCamera_increase_dof_distance" text="Increase DOF distance" />

@@ -22,6 +22,8 @@
 
 
     <string id="CinematicCamera_hotkey_category" text="电影镜头快捷键" />
+    <string id="CinematicCamera_open_cinematic_camera_menu" text="打开电影镜头菜单" />
+    <string id="CinematicCamera_open_cinematic_camera_menu_hint" text="打开电影镜头菜单。" />
     <string id="CinematicCamera_toggle_player_invulnerable" text="切换玩家角色无敌" />
     <string id="CinematicCamera_toggle_player_invulnerable_hint" text="切换玩家角色无敌。" />
     <string id="CinematicCamera_increase_dof_distance" text="增加焦距" />
