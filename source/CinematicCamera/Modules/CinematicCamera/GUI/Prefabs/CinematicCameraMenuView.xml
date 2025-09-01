@@ -1,7 +1,7 @@
 <Prefab>
   <Window>
     <ButtonWidget Command.Click="CloseMenu" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="RTSCamera.TransparentBrush">
-      <Children>            
+      <Children>
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" DoNotAcceptEvents="true">
           <Children>
             <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="725" SuggestedHeight="380" Sprite="PhotoMode\photo_mode_options_background" Color="#000000FF" AlphaFactor="0.6" DoNotAcceptEvents="true"/>

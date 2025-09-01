@@ -1,5 +1,4 @@
 ﻿using CinematicCamera.Config.HotKey;
-using MissionLibrary.HotKey;
 using MissionSharedLibrary.View;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
@@ -15,7 +14,7 @@ namespace CinematicCamera.MissionBehaviors
         private static bool _rightButtonDraggingMode;
 
         public CinematicCameraMenuView()
-            : base(25, nameof(CinematicCameraMenuView), false)
+            : base(25, nameof(CinematicCameraMenuView), false, false)
         {
         }
 
@@ -26,7 +25,7 @@ namespace CinematicCamera.MissionBehaviors
 
         public override void OnMissionScreenTick(float dt)
         {
-            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.OpenCinematicCameraMenu).IsKeyPressedInOrder(MissionScreen.InputManager))
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.OpenCinematicCameraMenu).IsKeyPressedInOrder())
             {
                 if (IsActivated)
                 {
@@ -47,6 +46,16 @@ namespace CinematicCamera.MissionBehaviors
                     || GauntletLayer.Input.IsHotKeyReleased("Exit"))
                     DeactivateMenu();
             }
+        }
+        public override bool OnEscape()
+        {
+            if (IsActivated)
+            {
+                DeactivateMenu();
+                return true;
+            }
+
+            return base.OnEscape();
         }
 
         private void UpdateDragData()
@@ -88,7 +97,7 @@ namespace CinematicCamera.MissionBehaviors
             if (mouseVisibility != GauntletLayer.InputRestrictions.MouseVisibility)
             {
                 GauntletLayer.InputRestrictions.SetInputRestrictions(mouseVisibility,
-                    mouseVisibility ? InputUsageMask.All : InputUsageMask.Invalid);
+                    mouseVisibility ? InputUsageMask.MouseButtons : InputUsageMask.Invalid);
             }
         }
 
