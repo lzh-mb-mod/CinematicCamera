@@ -13,7 +13,7 @@ namespace CinematicCamera
         {
             List<MissionBehavior> list = new List<MissionBehavior>
             {
-                new SetPlayerHealthLogic(),
+                new HotkeyLogic(),
                 new CinematicCameraMenuView()
             };
 

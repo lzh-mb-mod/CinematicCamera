@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.0.2] - 2025-09-07
+## Added
+- Add camera speed preset hotkey.
+
 ## [e1.0.6] - 2020-03-16
 ### Added
 - Add hot key for options.

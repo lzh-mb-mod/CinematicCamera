@@ -5,7 +5,7 @@ using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
 {
-    public class SetPlayerHealthLogic : MissionLogic
+    public class HotkeyLogic : MissionLogic
     {
         private readonly CinematicCameraConfig _config = CinematicCameraConfig.Get();
 
@@ -90,6 +90,21 @@ namespace CinematicCamera
             {
                 _config.CameraFov = 65.0f;
                 ModifyCameraHelper.UpdateFov();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.CameraSpeedLow).IsKeyPressed(Mission.InputManager))
+            {
+                _config.SpeedFactor = _config.CameraSpeedLow;
+                ModifyCameraHelper.UpdateSpeed();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.CameraSpeedMiddle).IsKeyPressed(Mission.InputManager))
+            {
+                _config.SpeedFactor = _config.CameraSpeedMiddle;
+                ModifyCameraHelper.UpdateSpeed();
+            }
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.CameraSpeedHigh).IsKeyPressed(Mission.InputManager))
+            {
+                _config.SpeedFactor = _config.CameraSpeedHigh;
+                ModifyCameraHelper.UpdateSpeed();
             }
         }
 

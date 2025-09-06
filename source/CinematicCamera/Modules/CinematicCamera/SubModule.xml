@@ -2,7 +2,7 @@
 <Module>
   <Name value="Cinematic Camera"/>
   <Id value="CinematicCamera"/>
-  <Version value="v2.0.1"/>
+  <Version value="v2.0.2"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <DependedModules>
@@ -11,7 +11,7 @@
     <DependedModule Id="Sandbox" DependentVersion="v1.2.12" />
     <DependedModule Id="CustomBattle" DependentVersion="v1.2.12"/>
     <DependedModule Id="StoryMode" DependentVersion="v1.2.12" />
-    <DependedModule Id="RTSCamera" DependentVersion="v5.1.8" />
+    <DependedModule Id="RTSCamera" DependentVersion="v5.1.9" />
   </DependedModules>
   <SubModules>
     <SubModule>

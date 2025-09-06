@@ -21,6 +21,9 @@ namespace CinematicCamera.Config.HotKey
         IncreaseFieldOfView,
         DecreaseFieldOfView,
         ResetFieldOfView,
+        CameraSpeedLow,
+        CameraSpeedMiddle,
+        CameraSpeedHigh,
         NumberOfGameKeyEnums
     }
     public class CinematicCameraGameKeyCategory
@@ -139,9 +142,9 @@ namespace CinematicCamera.Config.HotKey
                 {
                     new GameKeySequenceAlternative(
                         new List<InputKey>
-                {
-                    InputKey.BackSlash,
-                    InputKey.Minus
+                        {
+                            InputKey.BackSlash,
+                            InputKey.Minus
                         }
                     )
                 }));
@@ -150,11 +153,23 @@ namespace CinematicCamera.Config.HotKey
                 {
                     new GameKeySequenceAlternative(
                         new List<InputKey>
-                    {
-                        InputKey.BackSlash,
-                        InputKey.OpenBraces
+                        {
+                            InputKey.BackSlash,
+                            InputKey.OpenBraces
                         }
                     )
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.CameraSpeedLow, nameof(GameKeyEnum.CameraSpeedLow),
+                CategoryId, new List<GameKeySequenceAlternative>
+                {
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.CameraSpeedMiddle, nameof(GameKeyEnum.CameraSpeedMiddle),
+                CategoryId, new List<GameKeySequenceAlternative>
+                {
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.CameraSpeedHigh, nameof(GameKeyEnum.CameraSpeedHigh),
+                CategoryId, new List<GameKeySequenceAlternative>
+                {
                 }));
             return result;
         }

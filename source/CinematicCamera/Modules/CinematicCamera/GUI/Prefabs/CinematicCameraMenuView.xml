@@ -78,6 +78,27 @@
                   </Children>
                 </ListPanel>
 
+                <!-- CameraSpeedLow -->
+                <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod = "HorizontalLeftToRight">
+                  <Children>
+                    <CinematicCameraValueOption DataSource="{CameraSpeedLow}" MarginRight="20" />
+                  </Children>
+                </ListPanel>
+
+                <!-- CameraSpeedMiddle -->
+                <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod = "HorizontalLeftToRight">
+                  <Children>
+                    <CinematicCameraValueOption DataSource="{CameraSpeedMiddle}" MarginRight="20" />
+                  </Children>
+                </ListPanel>
+
+                <!-- CameraSpeedHigh -->
+                <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod = "HorizontalLeftToRight">
+                  <Children>
+                    <CinematicCameraValueOption DataSource="{CameraSpeedHigh}" MarginRight="20" />
+                  </Children>
+                </ListPanel>
+
               </Children>
             </ListPanel>
           </Children>

@@ -2,7 +2,6 @@
 using MissionLibrary.Provider;
 using MissionLibrary.View;
 using MissionSharedLibrary.Provider;
-using MissionSharedLibrary.View;
 using MissionSharedLibrary.View.ViewModelCollection;
 using MissionSharedLibrary.View.ViewModelCollection.Options;
 using System;

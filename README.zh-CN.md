@@ -3,7 +3,7 @@
 该mod让你可以在录制游戏电影时调整相机参数。
 
 ## 功能
-- 调整[`RTS Camera`](https://www.nexusmods.com/mountandblade2bannerlord/mods/355)中的相机的视野，景深，移动速度.
+- 调整[`RTS Camera`](https://www.nexusmods.com/mountandblade2bannerlord/mods/355)中的相机的视野，景深，移动速度。
 
 - 可选地将玩家角色设为无敌，以避免其偶然阵亡。
 

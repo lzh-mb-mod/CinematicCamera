@@ -43,6 +43,12 @@ namespace CinematicCamera
 
         public float DepthOfFieldEnd = 0;
 
+        public float CameraSpeedLow = 0.5f;
+
+        public float CameraSpeedMiddle = 1f;
+
+        public float CameraSpeedHigh = 3f;
+
 
         protected override XmlSerializer Serializer => new XmlSerializer(typeof(CinematicCameraConfig));
         
@@ -58,6 +64,9 @@ namespace CinematicCamera
             DepthOfFieldDistance = other.DepthOfFieldDistance;
             DepthOfFieldStart = other.DepthOfFieldStart;
             DepthOfFieldEnd = other.DepthOfFieldEnd;
+            CameraSpeedLow = other.CameraSpeedLow;
+            CameraSpeedMiddle = other.CameraSpeedMiddle;
+            CameraSpeedHigh = other.CameraSpeedHigh;
         }
 
         protected static string SavePathStatic { get; } = Path.Combine(ConfigPath.ConfigDir, CinematicCameraSubModule.ModuleId);

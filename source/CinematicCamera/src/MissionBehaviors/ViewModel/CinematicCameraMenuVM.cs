@@ -10,8 +10,8 @@ namespace CinematicCamera
     {
         private readonly CinematicCameraConfig _config = CinematicCameraConfig.Get();
 
-        private readonly SetPlayerHealthLogic _setPlayerHealthLogic =
-            Mission.Current.GetMissionBehavior<SetPlayerHealthLogic>();
+        private readonly HotkeyLogic _setPlayerHealthLogic =
+            Mission.Current.GetMissionBehavior<HotkeyLogic>();
 
         private NumericVM _verticalFov;
         //private NumericVM _zoom;
@@ -21,6 +21,8 @@ namespace CinematicCamera
         private NumericVM _verticalSpeedFactor;
 
         private NumericVM _depthOfFieldDistance, _depthOfFieldStart, _depthOfFieldEnd;
+
+        private NumericVM _cameraSpeedLow, _cameraSpeedMiddle, _cameraSpeedHigh;
 
         public string PlayerInvulnerableString { get; } = GameTexts.FindText("str_cinematic_camera_player_invulnerable").ToString();
         public string ResetString { get; } = GameTexts.FindText("str_cinematic_camera_reset").ToString();
@@ -159,6 +161,42 @@ namespace CinematicCamera
             }
         }
 
+        public NumericVM CameraSpeedLow
+        {
+            get => _cameraSpeedLow;
+            set
+            {
+                if (_cameraSpeedLow == value)
+                    return;
+                _cameraSpeedLow = value;
+                OnPropertyChanged(nameof(CameraSpeedLow));
+            }
+        }
+
+        public NumericVM CameraSpeedMiddle
+        {
+            get => _cameraSpeedMiddle;
+            set
+            {
+                if (_cameraSpeedMiddle == value)
+                    return;
+                _cameraSpeedMiddle = value;
+                OnPropertyChanged(nameof(CameraSpeedMiddle));
+            }
+        }
+
+        public NumericVM CameraSpeedHigh
+        {
+            get => _cameraSpeedHigh;
+            set
+            {
+                if (_cameraSpeedHigh == value)
+                    return;
+                _cameraSpeedHigh = value;
+                OnPropertyChanged(nameof(CameraSpeedHigh));
+            }
+        }
+
         public CinematicCameraMenuVM(Action closeMenu) : base(closeMenu)
         {
             VerticalFov = new NumericVM(GameTexts.FindText("str_cinematic_camera_vertical_fov").ToString(), _config.CameraFov, 1, 179, true,
@@ -205,6 +243,21 @@ namespace CinematicCamera
                 {
                     _config.DepthOfFieldEnd = v;
                     ModifyCameraHelper.UpdateDepthOfFieldParameters();
+                });
+            CameraSpeedLow = new NumericVM(GameTexts.FindText("str_cinematic_camera_camera_speed_low").ToString(), _config.CameraSpeedLow, 0.01f, 9.99f, false,
+                v =>
+                {
+                    _config.CameraSpeedLow = v;
+                });
+            CameraSpeedMiddle = new NumericVM(GameTexts.FindText("str_cinematic_camera_camera_speed_middle").ToString(), _config.CameraSpeedMiddle, 0.01f, 9.99f, false,
+                v =>
+                {
+                    _config.CameraSpeedMiddle = v;
+                });
+            CameraSpeedHigh = new NumericVM(GameTexts.FindText("str_cinematic_camera_camera_speed_high").ToString(), _config.CameraSpeedHigh, 0.01f, 9.99f, false,
+                v =>
+                {
+                    _config.CameraSpeedHigh = v;
                 });
         }
 
