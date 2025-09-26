@@ -42,4 +42,19 @@
   <string id="str_key_description.CinematicCameraHotKey_DecreaseFieldOfView" text="{=CinematicCamera_decrease_fov_hint}Decrease Field of View." />
   <string id="str_key_name.CinematicCameraHotKey_ResetFieldOfView" text="{=CinematicCamera_reset_fov}Reset FOV" />
   <string id="str_key_description.CinematicCameraHotKey_ResetFieldOfView" text="{=CinematicCamera_reset_fov_hint}Reset Field of View." />
+
+  <string id="str_cinematic_camera_current_agent" text="{=CinematicCamera_current_agent}Current Unit" />
+  <string id="str_cinematic_camera_current_agent_hint" text="{=CinematicCamera_current_agent_hint}The current unit to apply facial anime and action anime on." />
+  <string id="str_cinematic_camera_set_current_agent" text="{=CinematicCamera_set_current_agent}Set Current Unit" />
+  <string id="str_cinematic_camera_set_current_agent_hint" text="{=CinematicCamera_set_current_agent_hint}Set the current unit to the unit that camera is following." />
+  <string id="str_cinematic_camera_add_to_player_team" text="{=CinematicCamera_add_to_player_team}Add Unit to Player Team" />
+  <string id="str_cinematic_camera_add_to_enemy_team" text="{=CinematicCamera_add_to_enemy_team}Add Unit to Enemy Team" />
+  <string id="str_cinematic_camera_enable_giving_commands_in_regular_scene" text="{=CinematicCamera_enable_giving_commands_in_regular_scene}Enable Giving Commands in Regular Scene" />
+  <string id="str_cinematic_camera_enable_giving_commands_in_regular_scene_hint" text="{=CinematicCamera_enable_giving_commands_in_regular_scene_hint}Enable Giving Commands in Regular Scene" />
+  <string id="str_cinematic_camera_move_all_units_to_formation" text="{=CinematicCamera_move_all_units_to_formation}Move All Units without Formation to Formation 5" />
+  <string id="str_cinematic_camera_move_all_units_to_formation_hint" text="{=CinematicCamera_move_all_units_to_formation_hint}Move All Units without Formation to Formation 5" />
+  <string id="str_cinematic_camera_move_bodyguards_to_formation" text="{=CinematicCamera_move_bodyguards_to_formation}Move All Bodyguards without Formation to Formation 6" />
+  <string id="str_cinematic_camera_move_bodyguards_to_formation_hint" text="{=CinematicCamera_move_bodyguards_to_formation_hint}Move All Bodyguards without Formation to Formation 6" />
+  <string id="str_cinematic_camera_move_heroes_to_formation" text="{=CinematicCamera_move_heroes_to_formation}Move All Heroes without Formation to Formation 7" />
+  <string id="str_cinematic_camera_move_heroes_to_formation_hint" text="{=CinematicCamera_move_heroes_to_formation_hint}Move All Heroes without Formation to Formation 7" />
 </strings>

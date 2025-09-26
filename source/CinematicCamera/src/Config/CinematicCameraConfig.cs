@@ -49,8 +49,32 @@ namespace CinematicCamera
 
         public float CameraSpeedHigh = 3f;
 
+        public bool OrderUIInRegularScene = false;
 
-        protected override XmlSerializer Serializer => new XmlSerializer(typeof(CinematicCameraConfig));
+        public string FacialAnimation1Name = "";
+
+        public bool FacialAnim1Loop = false;
+
+        public string FacialAnimation2Name = "";
+
+        public bool FacialAnim2Loop = false;
+
+        public string FacialAnimation3Name = "";
+
+        public bool FacialAnim3Loop = false;
+
+        public string FacialAnimation4Name = "";
+
+        public bool FacialAnim4Loop = false;
+
+        public string FacialAnimation5Name = "";
+
+        public bool FacialAnim5Loop = false;
+
+        public static void OnMenuClosed()
+        {
+            Get().Serialize();
+        }
         
         protected override void CopyFrom(CinematicCameraConfig other)
         {
@@ -67,6 +91,7 @@ namespace CinematicCamera
             CameraSpeedLow = other.CameraSpeedLow;
             CameraSpeedMiddle = other.CameraSpeedMiddle;
             CameraSpeedHigh = other.CameraSpeedHigh;
+            OrderUIInRegularScene = other.OrderUIInRegularScene;
         }
 
         protected static string SavePathStatic { get; } = Path.Combine(ConfigPath.ConfigDir, CinematicCameraSubModule.ModuleId);

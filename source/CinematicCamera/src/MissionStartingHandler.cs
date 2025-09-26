@@ -3,7 +3,9 @@ using MissionLibrary.Controller;
 using MissionSharedLibrary.Controller;
 using System.Collections.Generic;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
+using TaleWorlds.MountAndBlade.View.MissionViews.Order;
 
 namespace CinematicCamera
 {
@@ -13,8 +15,9 @@ namespace CinematicCamera
         {
             List<MissionBehavior> list = new List<MissionBehavior>
             {
-                new HotkeyLogic(),
-                new CinematicCameraMenuView()
+                new CinematicCameraLogic(),
+                new CinematicCameraMenuView(),
+
             };
 
 
