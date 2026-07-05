@@ -25,7 +25,6 @@ namespace CinematicCamera.Patch
                     return false;
                 _patched = true;
 
-                // recover player formation from general formation
                 harmony.Patch(
                     typeof(MissionState).GetMethod("HandleOpenNew",
                         BindingFlags.Instance | BindingFlags.NonPublic),
@@ -50,7 +49,7 @@ namespace CinematicCamera.Patch
                 var list = new List<MissionBehavior>
                 {
                     new BattlePowerCalculationLogic(),
-                    new OrderTroopPlacer(),
+                    new OrderTroopPlacer(null),
                     ViewCreator.CreateMissionOrderUIHandler()
                 };
                 foreach (var missionBehavior in list)

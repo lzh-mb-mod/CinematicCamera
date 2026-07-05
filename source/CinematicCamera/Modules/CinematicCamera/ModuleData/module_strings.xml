@@ -14,6 +14,9 @@
   <string id="str_cinematic_camera_depth_of_field_distance" text="{=CinematicCamera_depthoffielddistance}Depth of Field Distance" />
   <string id="str_cinematic_camera_depth_of_field_start" text="{=CinematicCamera_depthoffieldstart}Depth of Field Focus Start" />
   <string id="str_cinematic_camera_depth_of_field_End" text="{=CinematicCamera_depthoffieldend}Depth of Field Focus End" />
+  <string id="str_cinematic_camera_camera_speed_low" text="{=CinematicCamera_cameraspeedlow}Camera Speed Low" />
+  <string id="str_cinematic_camera_camera_speed_medium" text="{=CinematicCamera_cameraspeedmedium}Camera Speed Medium" />
+  <string id="str_cinematic_camera_camera_speed_high" text="{=CinematicCamera_cameraspeedhigh}Camera Speed High" />
 
 
   <string id="str_key_category_name.CinematicCameraHotKey" text="{=CinematicCamera_hotkey_category}Cinematic Camera Hot Key" />
@@ -43,18 +46,64 @@
   <string id="str_key_name.CinematicCameraHotKey_ResetFieldOfView" text="{=CinematicCamera_reset_fov}Reset FOV" />
   <string id="str_key_description.CinematicCameraHotKey_ResetFieldOfView" text="{=CinematicCamera_reset_fov_hint}Reset Field of View." />
 
+  <string id="str_key_name.CinematicCameraHotKey_CameraSpeedLow" text="{=CinematicCamera_cameraspeedlow}Camera Speed Low" />
+  <string id="str_key_name.CinematicCameraHotKey_CameraSpeedMedium" text="{=CinematicCamera_cameraspeedmedium}Camera Speed Medium" />
+  <string id="str_key_name.CinematicCameraHotKey_CameraSpeedHigh" text="{=CinematicCamera_cameraspeedhigh}Camera Speed High" />
+
+  <string id="str_key_name.CinematicCameraHotKey_ExecuteAction" text="{=CinematicCamera_execute_action_hotkey}Execute Action" />
+  <string id="str_key_description.CinematicCameraHotKey_ExecuteAction" text="{=CinematicCamera_execute_action_hotkey_hint}Execute the selected action." />
+  <string id="str_key_name.CinematicCameraHotKey_ExecuteFacialAnimation" text="{=CinematicCamera_execute_facial_animation_hotkey}Execute Facial Animation" />
+  <string id="str_key_description.CinematicCameraHotKey_ExecuteFacialAnimation" text="{=CinematicCamera_execute_facial_animation_hotkey_hint}Execute the selected facial animation." />
+
+  <string id="str_cinematic_camera_enable_giving_commands_in_regular_scene" text="{=CinematicCamera_enable_giving_commands_in_regular_scene}Enable Giving Commands in Regular Scene" />
+  <string id="str_cinematic_camera_enable_giving_commands_in_regular_scene_hint" text="{=CinematicCamera_enable_giving_commands_in_regular_scene_hint}Enable Giving Commands in Regular Scene" />
   <string id="str_cinematic_camera_current_agent" text="{=CinematicCamera_current_agent}Current Unit" />
   <string id="str_cinematic_camera_current_agent_hint" text="{=CinematicCamera_current_agent_hint}The current unit to apply facial anime and action anime on." />
   <string id="str_cinematic_camera_set_current_agent" text="{=CinematicCamera_set_current_agent}Set Current Unit" />
   <string id="str_cinematic_camera_set_current_agent_hint" text="{=CinematicCamera_set_current_agent_hint}Set the current unit to the unit that camera is following." />
-  <string id="str_cinematic_camera_add_to_player_team" text="{=CinematicCamera_add_to_player_team}Add Unit to Player Team" />
-  <string id="str_cinematic_camera_add_to_enemy_team" text="{=CinematicCamera_add_to_enemy_team}Add Unit to Enemy Team" />
-  <string id="str_cinematic_camera_enable_giving_commands_in_regular_scene" text="{=CinematicCamera_enable_giving_commands_in_regular_scene}Enable Giving Commands in Regular Scene" />
-  <string id="str_cinematic_camera_enable_giving_commands_in_regular_scene_hint" text="{=CinematicCamera_enable_giving_commands_in_regular_scene_hint}Enable Giving Commands in Regular Scene" />
+  <string id="str_cinematic_camera_agent_watch_state_option" text="{=CinematicCamera_agent_watch_state_option}Agent Watch State" />
+  <string id="str_cinematic_camera_agent_watch_state_option_hint" text="{=CinematicCamera_agent_watch_state_option_hint}The current watch state of the agent." />
+  <string id="str_cinematic_camera_agent_watch_state.Patrolling" text="{=CinematicCamera_agent_watch_state_patrolling}Patrolling" />
+  <string id="str_cinematic_camera_agent_watch_state.Cautious" text="{=CinematicCamera_agent_watch_state_cautious}Cautious" />
+  <string id="str_cinematic_camera_agent_watch_state.Alarmed" text="{=CinematicCamera_agent_watch_state_alarmed}Alarmed" />
+  <string id="str_cinematic_camera_current_behavior" text="{=CinematicCamera_current_behavior}Current Behavior" />
+  <string id="str_cinematic_camera_current_behavior_hint" text="{=CinematicCamera_current_behavior_hint}The current behavior of the active behavior group." />
+  <string id="str_cinematic_camera_crouch_mode" text="{=CinematicCamera_crouch_mode}Crouch Mode" />
+  <string id="str_cinematic_camera_crouch_mode_hint" text="{=CinematicCamera_crouch_mode_hint}Toggle crouch mode for the current unit." />
+  <string id="str_cinematic_camera_walk_mode" text="{=CinematicCamera_walk_mode}Walk Mode" />
+  <string id="str_cinematic_camera_walk_mode_hint" text="{=CinematicCamera_walk_mode_hint}Toggle walk mode for the current unit." />
+  <string id="str_cinematic_camera_add_current_agent_to_player_team" text="{=CinematicCamera_add_current_agent_to_player_team}Add Current Unit to Player Team" />
+  <string id="str_cinematic_camera_add_current_agent_to_enemy_team" text="{=CinematicCamera_add_current_agent_to_enemy_team}Add Current Unit to Enemy Team" />
   <string id="str_cinematic_camera_move_all_units_to_formation" text="{=CinematicCamera_move_all_units_to_formation}Move All Units without Formation to Formation 5" />
   <string id="str_cinematic_camera_move_all_units_to_formation_hint" text="{=CinematicCamera_move_all_units_to_formation_hint}Move All Units without Formation to Formation 5" />
-  <string id="str_cinematic_camera_move_bodyguards_to_formation" text="{=CinematicCamera_move_bodyguards_to_formation}Move All Bodyguards without Formation to Formation 6" />
-  <string id="str_cinematic_camera_move_bodyguards_to_formation_hint" text="{=CinematicCamera_move_bodyguards_to_formation_hint}Move All Bodyguards without Formation to Formation 6" />
-  <string id="str_cinematic_camera_move_heroes_to_formation" text="{=CinematicCamera_move_heroes_to_formation}Move All Heroes without Formation to Formation 7" />
-  <string id="str_cinematic_camera_move_heroes_to_formation_hint" text="{=CinematicCamera_move_heroes_to_formation_hint}Move All Heroes without Formation to Formation 7" />
+  <string id="str_cinematic_camera_move_bodyguards_to_formation" text="{=CinematicCamera_move_bodyguards_to_formation}Move All Bodyguards to Formation 6" />
+  <string id="str_cinematic_camera_move_bodyguards_to_formation_hint" text="{=CinematicCamera_move_bodyguards_to_formation_hint}Move All Bodyguards to Formation 6" />
+  <string id="str_cinematic_camera_move_heroes_to_formation" text="{=CinematicCamera_move_heroes_to_formation}Move All Heroes to Formation 7" />
+  <string id="str_cinematic_camera_move_heroes_to_formation_hint" text="{=CinematicCamera_move_heroes_to_formation_hint}Move All Heroes to Formation 7" />
+  <string id="str_cinematic_camera_disable_calvary_charge" text="{=CinematicCamera_disable_calvary_charge}Disable Calvary Charge" />
+  <string id="str_cinematic_camera_disable_calvary_charge_hint" text="{=CinematicCamera_disable_calvary_charge_hint}Disable Calvary Charge to avoid too much time wasting on calvary charge behavior." />
+
+  <string id="str_cinematic_camera_action_option" text="{=CinematicCamera_action_option}Action Option" />
+  <string id="str_cinematic_camera_all_actions_list" text="{=CinematicCamera_all_actions_list}All Actions" />
+  <string id="str_cinematic_camera_all_actions_list_hint" text="{=CinematicCamera_all_actions_list_hint}The name of the action to be executed." />
+  <string id="str_cinematic_camera_favorite_actions_list" text="{=CinematicCamera_favorite_actions_list}Favorite Actions" />
+  <string id="str_cinematic_camera_favorite_actions_list_hint" text="{=CinematicCamera_favorite_actions_list_hint}The name of the action to be executed." />
+  <string id="str_cinematic_camera_add_action_to_favorites" text="{=CinematicCamera_add_action_to_favorites}Add Action to Favorites" />
+  <string id="str_cinematic_camera_add_action_to_favorites_hint" text="{=CinematicCamera_add_action_to_favorites_hint}Add the action to the favorite actions list." />
+  <string id="str_cinematic_camera_remove_action_from_favorites" text="{=CinematicCamera_remove_action_from_favorites}Remove Action from Favorites" />
+  <string id="str_cinematic_camera_remove_action_from_favorites_hint" text="{=CinematicCamera_remove_action_from_favorites_hint}Remove the action from the favorite actions list." />
+  <string id="str_cinematic_camera_execute_action" text="{=CinematicCamera_execute_action}Execute Action" />
+  <string id="str_cinematic_camera_execute_action_hint" text="{=CinematicCamera_execute_action_hint}Execute the action with the specified action name." />
+
+  <string id="str_cinematic_camera_facial_animation_option" text="{=CinematicCamera_facial_animation_option}Facial Animation Option" />
+  <string id="str_cinematic_camera_all_facial_animations_list" text="{=CinematicCamera_all_facial_animations_list}All Facial Animations" />
+  <string id="str_cinematic_camera_all_facial_animations_list_hint" text="{=CinematicCamera_all_facial_animations_list_hint}The name of the facial animation to be executed." />
+  <string id="str_cinematic_camera_favorite_facial_animations_list" text="{=CinematicCamera_favorite_facial_animations_list}Favorite Facial Animations" />
+  <string id="str_cinematic_camera_favorite_facial_animations_list_hint" text="{=CinematicCamera_favorite_facial_animations_list_hint}The name of the facial animation to be executed." />
+  <string id="str_cinematic_camera_add_facial_animation_to_favorites" text="{=CinematicCamera_add_facial_animation_to_favorites}Add Facial Animation to Favorites" />
+  <string id="str_cinematic_camera_add_facial_animation_to_favorites_hint" text="{=CinematicCamera_add_facial_animation_to_favorites_hint}Add the facial animation to the favorite facial animations list." />
+  <string id="str_cinematic_camera_remove_facial_animation_from_favorites" text="{=CinematicCamera_remove_facial_animation_from_favorites}Remove Facial Animation from Favorites" />
+  <string id="str_cinematic_camera_remove_facial_animation_from_favorites_hint" text="{=CinematicCamera_remove_facial_animation_from_favorites_hint}Remove the facial animation from the favorite facial animations list." />
+  <string id="str_cinematic_camera_execute_facial_animation" text="{=CinematicCamera_execute_facial_animation}Execute Facial Animation" />
+  <string id="str_cinematic_camera_execute_facial_animation_hint" text="{=CinematicCamera_execute_facial_animation_hint}Execute the facial animation with the specified facial animation name." />
 </strings>

@@ -1,6 +1,10 @@
 ﻿using CinematicCamera.Config.HotKey;
+using CinematicCamera.src.AgentBehaviors;
 using MissionLibrary.Event;
 using MissionSharedLibrary.Utilities;
+using SandBox;
+using SandBox.Conversation;
+using SandBox.Missions.AgentBehaviors;
 using System;
 using System.Collections.Generic;
 using TaleWorlds.Core;
@@ -49,13 +53,19 @@ namespace CinematicCamera
             }
         }
 
-        public static void AddToPlayerTeam()
+        public static Agent GetCurrentAgent()
         {
             var logic = Mission.Current.GetMissionBehavior<CinematicCameraLogic>();
             var missionScreen = Utility.GetMissionScreen();
-            var agentToAdd = logic.CurrentAgent ?? missionScreen.LastFollowedAgent;
+            return logic.CurrentAgent ?? missionScreen.LastFollowedAgent;
+        }
+
+        public static void AddToPlayerTeam()
+        {
+            var agentToAdd = GetCurrentAgent();
             if (agentToAdd != null)
             {
+                SetAgentFormation(agentToAdd, null);
                 agentToAdd.SetTeam(Mission.Current.PlayerTeam, true);
             }
             else
@@ -66,11 +76,10 @@ namespace CinematicCamera
 
         public static void AddToEnemyTeam()
         {
-            var logic = Mission.Current.GetMissionBehavior<CinematicCameraLogic>();
-            var missionScreen = Utility.GetMissionScreen();
-            var agentToAdd = logic.CurrentAgent ?? missionScreen.LastFollowedAgent;
+            var agentToAdd = GetCurrentAgent();
             if (agentToAdd != null)
             {
+                SetAgentFormation(agentToAdd, null);
                 agentToAdd.SetTeam(Mission.Current.PlayerEnemyTeam, true);
             }
             else
@@ -96,6 +105,32 @@ namespace CinematicCamera
             MissionEvent.MainAgentWillBeChangedToAnotherOne -= MainAgentWillBeChangedToAnotherOne;
         }
 
+        public static void SetAgentFormation(Agent agent, Formation formation)
+        {
+            if (agent == null || Mission.Current.IsNavalBattle)
+                return;
+            var campaignAgentComponent = agent.GetComponent<CampaignAgentComponent>();
+            if (campaignAgentComponent == null || campaignAgentComponent.AgentNavigator == null)
+            {
+                agent.Formation = formation;
+                return;
+            }
+            DailyBehaviorGroup behaviorGroup = campaignAgentComponent.AgentNavigator.GetBehaviorGroup<DailyBehaviorGroup>();
+            if (formation != null)
+            {
+                FormationAgentBehavior followOrderAgentBehavior = behaviorGroup.AddBehavior<FormationAgentBehavior>();
+                behaviorGroup.SetScriptedBehavior<FormationAgentBehavior>();
+            }
+            else
+            {
+                if (behaviorGroup.ScriptedBehavior == behaviorGroup.GetBehavior<FormationAgentBehavior>())
+                {
+                    behaviorGroup.DisableScriptedBehavior();
+                }
+            }
+            agent.Formation = formation;
+        }
+
         public override void OnAgentTeamChanged(Team prevTeam, Team newTeam, Agent agent)
         {
             base.OnAgentTeamChanged(prevTeam, newTeam, agent);
@@ -107,8 +142,8 @@ namespace CinematicCamera
             if (newTeam != Mission.PlayerTeam)
                 return;
             // crash if agent.Equipment is null and agent is added to formation.
-            if (agent.Equipment != null)
-                agent.Formation = newTeam.GetFormation(FormationClass.Infantry);
+            //if (agent.Equipment != null)
+            //    SetAgentFormation(agent, newTeam.GetFormation(FormationClass.Infantry));
             if (!agent.IsPlayerControlled)
                 return;
             newTeam.PlayerOrderController.Owner = agent;
@@ -128,8 +163,8 @@ namespace CinematicCamera
                 return;
             if (agent.Team != Mission.PlayerTeam || agent.Team == null)
                 return;
-            if (agent.Equipment != null)
-                agent.Formation = agent.Team.GetFormation(FormationClass.Infantry);
+            //if (agent.Equipment != null)
+            //    SetAgentFormation(agent, agent.Team.GetFormation(FormationClass.Infantry));
             if (!agent.IsPlayerControlled)
                 return;
             agent.Team.PlayerOrderController.Owner = agent;
@@ -219,9 +254,9 @@ namespace CinematicCamera
                 _config.SpeedFactor = _config.CameraSpeedLow;
                 ModifyCameraHelper.UpdateSpeed();
             }
-            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.CameraSpeedMiddle).IsKeyPressed(Mission.InputManager))
+            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.CameraSpeedMedium).IsKeyPressed(Mission.InputManager))
             {
-                _config.SpeedFactor = _config.CameraSpeedMiddle;
+                _config.SpeedFactor = _config.CameraSpeedMedium;
                 ModifyCameraHelper.UpdateSpeed();
             }
             if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.CameraSpeedHigh).IsKeyPressed(Mission.InputManager))
@@ -237,7 +272,7 @@ namespace CinematicCamera
                 UpdateInvulnerable(false);
         }
 
-        private void Mission_OnMainAgentChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void Mission_OnMainAgentChanged(Agent oldAgent)
         {
             if (Mission.MainAgent != null)
             {
@@ -261,7 +296,7 @@ namespace CinematicCamera
             {
                 if (agent.Formation == null)
                 {
-                    agent.Formation = Mission.Current.PlayerTeam.GetFormation(FormationClass.Skirmisher);
+                    SetAgentFormation(agent, agent.Team.GetFormation(FormationClass.Skirmisher));
                 }
             }
         }
@@ -269,15 +304,33 @@ namespace CinematicCamera
         public static void MoveAllBodyguardsToFormation6()
         {
             Mission.Current.PlayerTeam.GetFormation(FormationClass.Bodyguard).ApplyActionOnEachUnitViaBackupList(
-                agent => agent.Formation = Mission.Current.PlayerTeam.GetFormation(FormationClass.HeavyInfantry));
+                agent => SetAgentFormation(agent, Mission.Current.PlayerTeam.GetFormation(FormationClass.HeavyInfantry)));
         }
 
         public static void MoveAllHeroesToFormation7()
         {
             foreach (var agent in Mission.Current.PlayerTeam.GetHeroAgents())
             {
-                agent.Formation = Mission.Current.PlayerTeam.GetFormation(FormationClass.LightCavalry);
+                SetAgentFormation(agent, Mission.Current.PlayerTeam.GetFormation(FormationClass.LightCavalry));
             }
+        }
+
+        public static void ExecuteAction(string actionName)
+        {
+            var currentAgent= GetCurrentAgent();
+            if (currentAgent == null)
+                return;
+            var action = ActionIndexCache.Create(actionName);
+            currentAgent.SetActionChannel(0, action, additionalFlags: AnimFlags.amf_priority_mask | AnimFlags.anf_restart);
+        }
+
+        internal static void ExecuteFacialAnimation(string facialAnimationName)
+        {
+            var currentAgent = GetCurrentAgent();
+            if (currentAgent == null)
+                return;
+
+            currentAgent.SetAgentFacialAnimation(Agent.FacialAnimChannel.High, facialAnimationName, false);
         }
     }
 }

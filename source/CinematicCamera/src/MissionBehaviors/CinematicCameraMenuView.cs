@@ -2,6 +2,7 @@
 using MissionSharedLibrary.View;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
+using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera.MissionBehaviors
 {
@@ -12,9 +13,11 @@ namespace CinematicCamera.MissionBehaviors
         private static float _beginDraggingOffset;
         private static readonly float _beginDraggingOffsetThreshold = 100;
         private static bool _rightButtonDraggingMode;
+        public static Vec2? MousePositionBeforeDragging;
+        public static Vec2? MousePositionToRecover;
 
         public CinematicCameraMenuView()
-            : base(25, nameof(CinematicCameraMenuView), false, false)
+            : base(25, nameof(CinematicCameraMenuView), false, true)
         {
         }
 
@@ -30,17 +33,18 @@ namespace CinematicCamera.MissionBehaviors
                 if (IsActivated)
                 {
                     DeactivateMenu();
+                    EndDrag();
                 }
                 else
                 {
                     ActivateMenu();
+                    DataSource.RefreshValues();
                 }
             }
             if (IsActivated)
             {
                 UpdateDragData();
                 UpdateMouseVisibility();
-                DataSource.RefreshValues();
 
                 if (GauntletLayer.Input.IsKeyReleased(InputKey.RightMouseButton) && !_rightButtonDraggingMode
                     || GauntletLayer.Input.IsHotKeyReleased("Exit"))
@@ -52,6 +56,7 @@ namespace CinematicCamera.MissionBehaviors
             if (IsActivated)
             {
                 DeactivateMenu();
+                EndDrag();
                 return true;
             }
 
@@ -65,7 +70,7 @@ namespace CinematicCamera.MissionBehaviors
                 _willEndDraggingMode = false;
                 EndDrag();
             }
-            else if (GauntletLayer.Input.IsKeyReleased(InputKey.RightMouseButton))
+            else if (MissionScreen.SceneLayer.Input.IsKeyReleased(InputKey.RightMouseButton))
             {
                 if (_earlyDraggingMode || _rightButtonDraggingMode)
                     _willEndDraggingMode = true;
@@ -97,7 +102,12 @@ namespace CinematicCamera.MissionBehaviors
             if (mouseVisibility != GauntletLayer.InputRestrictions.MouseVisibility)
             {
                 GauntletLayer.InputRestrictions.SetInputRestrictions(mouseVisibility,
-                    mouseVisibility ? InputUsageMask.MouseButtons : InputUsageMask.Invalid);
+                    mouseVisibility ? InputUsageMask.Mouse : InputUsageMask.Invalid);
+            }
+            if (MousePositionToRecover.HasValue)
+            {
+                TaleWorlds.InputSystem.Input.SetMousePosition((int)MousePositionToRecover.Value.x, (int)MousePositionToRecover.Value.y);
+                MousePositionToRecover = null;
             }
         }
 
@@ -115,6 +125,7 @@ namespace CinematicCamera.MissionBehaviors
         {
             _earlyDraggingMode = true;
             _beginDraggingOffset = 0;
+            MousePositionBeforeDragging = Mission.Current.InputManager.GetMousePositionPixel();
         }
 
         private static void EndEarlyDragging()
@@ -133,6 +144,8 @@ namespace CinematicCamera.MissionBehaviors
         {
             EndEarlyDragging();
             _rightButtonDraggingMode = false;
+            MousePositionToRecover = MousePositionBeforeDragging;
+            MousePositionBeforeDragging = null;
         }
     }
 }

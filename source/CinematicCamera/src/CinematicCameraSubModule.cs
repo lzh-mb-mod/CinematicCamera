@@ -28,23 +28,17 @@ namespace CinematicCamera
             {
                 Initialize();
                 Utility.ShouldDisplayMessage = false;
-                Module.CurrentModule.GlobalTextManager.LoadGameTexts();
                 _successPatch = true;
                 _successPatch &= Patch_MissionState.Patch(_harmony);
                 _successPatch &= Patch_BattlePowerCalculationLogic.Patch(_harmony);
+                _successPatch &= Patch_AgentNavigator.Patch(_harmony);
+                _successPatch &= Patch_VisualOrderProvider.Patch(_harmony);
             }
             catch (Exception e)
             {
                 _successPatch = false;
                 MBDebug.ConsolePrint(e.ToString());
             }
-}
-
-        protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
-        {
-            base.OnGameStart(game, gameStarterObject);
-
-            game.GameTextManager.LoadGameTexts();
         }
 
         private void Initialize()
@@ -64,17 +58,27 @@ namespace CinematicCamera
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
 
-            if (!SecondInitialize())
+            if (!ThirdInitialize())
                 return;
             if (!_successPatch)
             {
                 InformationManager.DisplayMessage(new InformationMessage("Cinematic Camera: patch failed"));
             }
+
+            try
+            {
+                Module.CurrentModule.GlobalTextManager.LoadGameTexts();
+            }
+            catch (Exception e)
+            {
+                MBDebug.ConsolePrint(e.ToString());
+                InformationManager.DisplayMessage(new InformationMessage($"CinematicCamera: failed to load game texts: {e}"));
+            }
         }
 
-        private bool SecondInitialize()
+        private bool ThirdInitialize()
         {
-            if (!Initializer.SecondInitialize())
+            if (!Initializer.ThirdInitialize())
                 return false;
 
             CinematicCameraGameKeyCategory.RegisterGameKeyCategory();
@@ -85,6 +89,13 @@ namespace CinematicCamera
             AMenuManager.Get().OnMenuClosedEvent += ModifyCameraHelper.UpdateDepthOfFieldParameters;
             AMenuManager.Get().OnMenuClosedEvent += ModifyCameraHelper.UpdateDepthOfFieldDistance;
             return true;
+        }
+
+        protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
+        {
+            base.OnGameStart(game, gameStarterObject);
+
+            game.GameTextManager.LoadGameTexts();
         }
 
         public override void OnMissionBehaviorInitialize(Mission mission)

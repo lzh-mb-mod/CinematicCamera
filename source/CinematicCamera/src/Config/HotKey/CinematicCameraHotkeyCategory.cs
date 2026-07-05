@@ -22,8 +22,10 @@ namespace CinematicCamera.Config.HotKey
         DecreaseFieldOfView,
         ResetFieldOfView,
         CameraSpeedLow,
-        CameraSpeedMiddle,
+        CameraSpeedMedium,
         CameraSpeedHigh,
+        ExecuteAction,
+        ExecuteFacialAnimation,
         NumberOfGameKeyEnums
     }
     public class CinematicCameraGameKeyCategory
@@ -163,11 +165,19 @@ namespace CinematicCamera.Config.HotKey
                 CategoryId, new List<GameKeySequenceAlternative>
                 {
                 }));
-            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.CameraSpeedMiddle, nameof(GameKeyEnum.CameraSpeedMiddle),
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.CameraSpeedMedium, nameof(GameKeyEnum.CameraSpeedMedium),
                 CategoryId, new List<GameKeySequenceAlternative>
                 {
                 }));
             result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.CameraSpeedHigh, nameof(GameKeyEnum.CameraSpeedHigh),
+                CategoryId, new List<GameKeySequenceAlternative>
+                {
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.ExecuteAction, nameof(GameKeyEnum.ExecuteAction),
+                CategoryId, new List<GameKeySequenceAlternative>
+                {
+                }));
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.ExecuteFacialAnimation, nameof(GameKeyEnum.ExecuteFacialAnimation),
                 CategoryId, new List<GameKeySequenceAlternative>
                 {
                 }));
