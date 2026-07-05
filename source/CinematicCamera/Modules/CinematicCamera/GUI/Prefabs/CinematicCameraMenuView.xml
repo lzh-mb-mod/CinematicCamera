@@ -5,7 +5,7 @@
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" DoNotAcceptEvents="true">
           <Children>
             <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="925" SuggestedHeight="780" Sprite="PhotoMode\photo_mode_options_background" Color="#000000FF" AlphaFactor="0.6" DoNotAcceptEvents="true"/>
-            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MinWidth="500" MinHeight="500" MarginTop="25" MarginLeft="25" StackLayout.LayoutMethod = "VerticalBottomToTop" Color="#000000FF" AlphaFactor="0.8">
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MinWidth="500" MinHeight="500" MarginTop="25" MarginLeft="25" StackLayout.LayoutMethod = "VerticalTopToBottom" Color="#000000FF" AlphaFactor="0.8">
               <Children>
 
                 <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="42" HorizontalAlignment="Left" PositionXOffset="-18" MarginTop="10">
