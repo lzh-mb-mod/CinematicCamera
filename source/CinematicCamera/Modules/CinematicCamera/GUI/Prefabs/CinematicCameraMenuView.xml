@@ -4,7 +4,7 @@
       <Children>
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" DoNotAcceptEvents="true">
           <Children>
-            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="725" SuggestedHeight="380" Sprite="PhotoMode\photo_mode_options_background" Color="#000000FF" AlphaFactor="0.6" DoNotAcceptEvents="true"/>
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="925" SuggestedHeight="780" Sprite="PhotoMode\photo_mode_options_background" Color="#000000FF" AlphaFactor="0.6" DoNotAcceptEvents="true"/>
             <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MinWidth="500" MinHeight="500" MarginTop="25" MarginLeft="25" StackLayout.LayoutMethod = "VerticalBottomToTop" Color="#000000FF" AlphaFactor="0.8">
               <Children>
 
@@ -30,6 +30,10 @@
                   </Children>
                 </ListPanel>
 
+                <Standard.DropdownWithHorizontalControl Id="SelectionOption" MarginRight="5" Parameter.IsFlatDesign="true" Parameter.SelectorDataSource="{ColorGradeSelector}" Parameter.ShowNextAndPrevious="true" HorizontalAlignment="Center" GamepadNavigationIndex="0" />
+                
+                <Standard.DropdownWithHorizontalControl Id="SelectionOption" MarginRight="5" Parameter.IsFlatDesign="true" Parameter.SelectorDataSource="{OverlaySelector}" Parameter.ShowNextAndPrevious="true" HorizontalAlignment="Center" GamepadNavigationIndex="1" />
+                
                 <!-- VerticalFov -->
                 <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod = "HorizontalLeftToRight">
                   <Children>

@@ -19,6 +19,9 @@
     <string id="CinematicCamera_depthoffielddistance" text="景深焦距" />
     <string id="CinematicCamera_depthoffieldstart" text="景深开始参数" />
     <string id="CinematicCamera_depthoffieldend" text="景深结束参数" />
+    <string id="CinematicCamera_cameraspeedlow" text="镜头速度低" />
+    <string id="CinematicCamera_cameraspeedmedium" text="镜头速度中" />
+    <string id="CinematicCamera_cameraspeedhigh" text="镜头速度高" />
 
 
     <string id="CinematicCamera_hotkey_category" text="电影镜头快捷键" />
@@ -47,5 +50,62 @@
     <string id="CinematicCamera_decrease_fov_hint" text="减小视野。" />
     <string id="CinematicCamera_reset_fov" text="重置视野" />
     <string id="CinematicCamera_reset_fov_hint" text="重置视野。" />
+
+    <string id="CinematicCamera_execute_action_hotkey" text="执行动作" />
+    <string id="CinematicCamera_execute_action_hotkey_hint" text="执行所选动作。" />
+    <string id="CinematicCamera_execute_facial_animation_hotkey" text="执行面部动画" />
+    <string id="CinematicCamera_execute_facial_animation_hotkey_hint" text="执行所选面部动画。" />
+
+    <string id="CinematicCamera_enable_giving_commands_in_regular_scene" text="在普通场景中启用指令" />
+    <string id="CinematicCamera_enable_giving_commands_in_regular_scene_hint" text="在普通场景中启用指令" />
+    <string id="CinematicCamera_current_agent" text="当前单位" />
+    <string id="CinematicCamera_current_agent_hint" text="应用面部动画和动作动画的当前单位。" />
+    <string id="CinematicCamera_set_current_agent" text="设置当前单位" />
+    <string id="CinematicCamera_set_current_agent_hint" text="将当前单位设置为摄像机正在跟随的单位。" />
+    <string id="CinematicCamera_agent_watch_state_option" text="单位警戒状态" />
+    <string id="CinematicCamera_agent_watch_state_option_hint" text="单位的当前警戒状态。" />
+    <string id="CinematicCamera_agent_watch_state_patrolling" text="巡逻" />
+    <string id="CinematicCamera_agent_watch_state_cautious" text="警觉" />
+    <string id="CinematicCamera_agent_watch_state_alarmed" text="警报" />
+    <string id="CinematicCamera_current_behavior" text="当前行为" />
+    <string id="CinematicCamera_current_behavior_hint" text="活动行为组的当前行为。" />
+    <string id="CinematicCamera_crouch_mode" text="蹲伏模式" />
+    <string id="CinematicCamera_crouch_mode_hint" text="切换当前单位的蹲伏模式。" />
+    <string id="CinematicCamera_walk_mode" text="行走模式" />
+    <string id="CinematicCamera_walk_mode_hint" text="切换当前单位的行走模式。" />
+    <string id="CinematicCamera_add_current_agent_to_player_team" text="将当前单位添加到玩家队伍" />
+    <string id="CinematicCamera_add_current_agent_to_enemy_team" text="将当前单位添加到敌方队伍" />
+    <string id="CinematicCamera_move_all_units_to_formation" text="将所有未编队单位移动到编队5" />
+    <string id="CinematicCamera_move_all_units_to_formation_hint" text="将所有未编队单位移动到编队5" />
+    <string id="CinematicCamera_move_bodyguards_to_formation" text="将所有护卫移动到编队6" />
+    <string id="CinematicCamera_move_bodyguards_to_formation_hint" text="将所有护卫移动到编队6" />
+    <string id="CinematicCamera_move_heroes_to_formation" text="将所有英雄移动到编队7" />
+    <string id="CinematicCamera_move_heroes_to_formation_hint" text="将所有英雄移动到编队7" />
+    <string id="CinematicCamera_disable_calvary_charge" text="禁用骑兵冲锋" />
+    <string id="CinematicCamera_disable_calvary_charge_hint" text="禁用骑兵冲锋以避免在骑兵冲锋行为上浪费过多时间。" />
+
+    <string id="CinematicCamera_action_option" text="动作选项" />
+    <string id="CinematicCamera_all_actions_list" text="所有动作" />
+    <string id="CinematicCamera_all_actions_list_hint" text="要执行的动作的名称。" />
+    <string id="CinematicCamera_favorite_actions_list" text="收藏的动作" />
+    <string id="CinematicCamera_favorite_actions_list_hint" text="要执行的动作的名称。" />
+    <string id="CinematicCamera_add_action_to_favorites" text="添加动作到收藏" />
+    <string id="CinematicCamera_add_action_to_favorites_hint" text="将动作添加到收藏动作列表中。" />
+    <string id="CinematicCamera_remove_action_from_favorites" text="从收藏中移除动作" />
+    <string id="CinematicCamera_remove_action_from_favorites_hint" text="将动作从收藏动作列表中移除。" />
+    <string id="CinematicCamera_execute_action" text="执行动作" />
+    <string id="CinematicCamera_execute_action_hint" text="执行指定名称的动作。" />
+
+    <string id="CinematicCamera_facial_animation_option" text="面部表情选项" />
+    <string id="CinematicCamera_all_facial_animations_list" text="所有面部表情" />
+    <string id="CinematicCamera_all_facial_animations_list_hint" text="要执行的面部表情的名称。" />
+    <string id="CinematicCamera_favorite_facial_animations_list" text="收藏的面部表情" />
+    <string id="CinematicCamera_favorite_facial_animations_list_hint" text="要执行的面部表情的名称。" />
+    <string id="CinematicCamera_add_facial_animation_to_favorites" text="添加面部表情到收藏" />
+    <string id="CinematicCamera_add_facial_animation_to_favorites_hint" text="将面部表情添加到收藏面部表情列表中。" />
+    <string id="CinematicCamera_remove_facial_animation_from_favorites" text="从收藏中移除面部表情" />
+    <string id="CinematicCamera_remove_facial_animation_from_favorites_hint" text="将面部表情从收藏面部表情列表中移除。" />
+    <string id="CinematicCamera_execute_facial_animation" text="执行面部表情" />
+    <string id="CinematicCamera_execute_facial_animation_hint" text="执行指定名称的面部表情。" />
   </strings>
 </base>

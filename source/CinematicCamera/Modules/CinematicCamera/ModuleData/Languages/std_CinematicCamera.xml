@@ -20,6 +20,9 @@
     <string id="CinematicCamera_depthoffielddistance" text="Depth of Field Distance" />
     <string id="CinematicCamera_depthoffieldstart" text="Depth of Field Focus Start" />
     <string id="CinematicCamera_depthoffieldend" text="Depth of Field Focus End" />
+    <string id="CinematicCamera_cameraspeedlow" text="Camera Speed Low" />
+    <string id="CinematicCamera_cameraspeedmedium" text="Camera Speed Medium" />
+    <string id="CinematicCamera_cameraspeedhigh" text="Camera Speed High" />
 
 
     <string id="CinematicCamera_hotkey_category" text="Cinematic Camera Hot Key" />
@@ -48,5 +51,62 @@
     <string id="CinematicCamera_decrease_fov_hint" text="Decrease Field of View." />
     <string id="CinematicCamera_reset_fov" text="Reset FOV" />
     <string id="CinematicCamera_reset_fov_hint" text="Reset Field of View." />
+
+    <string id="CinematicCamera_execute_action_hotkey" text="Execute Action" />
+    <string id="CinematicCamera_execute_action_hotkey_hint" text="Execute the selected action." />
+    <string id="CinematicCamera_execute_facial_animation_hotkey" text="Execute Facial Animation" />
+    <string id="CinematicCamera_execute_facial_animation_hotkey_hint" text="Execute the selected facial animation." />
+
+    <string id="CinematicCamera_enable_giving_commands_in_regular_scene" text="Enable Giving Commands in Regular Scene" />
+    <string id="CinematicCamera_enable_giving_commands_in_regular_scene_hint" text="Enable Giving Commands in Regular Scene" />
+    <string id="CinematicCamera_current_agent" text="Current Unit" />
+    <string id="CinematicCamera_current_agent_hint" text="The current unit to apply facial anime and action anime on." />
+    <string id="CinematicCamera_set_current_agent" text="Set Current Unit" />
+    <string id="CinematicCamera_set_current_agent_hint" text="Set the current unit to the unit that camera is following." />
+    <string id="CinematicCamera_agent_watch_state_option" text="Agent Watch State" />
+    <string id="CinematicCamera_agent_watch_state_option_hint" text="The current watch state of the agent." />
+    <string id="CinematicCamera_agent_watch_state_patrolling" text="Patrolling" />
+    <string id="CinematicCamera_agent_watch_state_cautious" text="Cautious" />
+    <string id="CinematicCamera_agent_watch_state_alarmed" text="Alarmed" />
+    <string id="CinematicCamera_current_behavior" text="Current Behavior" />
+    <string id="CinematicCamera_current_behavior_hint" text="The current behavior of the active behavior group." />
+    <string id="CinematicCamera_crouch_mode" text="Crouch Mode" />
+    <string id="CinematicCamera_crouch_mode_hint" text="Toggle crouch mode for the current unit." />
+    <string id="CinematicCamera_walk_mode" text="Walk Mode" />
+    <string id="CinematicCamera_walk_mode_hint" text="Toggle walk mode for the current unit." />
+    <string id="CinematicCamera_add_current_agent_to_player_team" text="Add Current Unit to Player Team" />
+    <string id="CinematicCamera_add_current_agent_to_enemy_team" text="Add Current Unit to Enemy Team" />
+    <string id="CinematicCamera_move_all_units_to_formation" text="Move All Units without Formation to Formation 5" />
+    <string id="CinematicCamera_move_all_units_to_formation_hint" text="Move All Units without Formation to Formation 5" />
+    <string id="CinematicCamera_move_bodyguards_to_formation" text="Move All Bodyguards to Formation 6" />
+    <string id="CinematicCamera_move_bodyguards_to_formation_hint" text="Move All Bodyguards to Formation 6" />
+    <string id="CinematicCamera_move_heroes_to_formation" text="Move All Heroes to Formation 7" />
+    <string id="CinematicCamera_move_heroes_to_formation_hint" text="Move All Heroes to Formation 7" />
+    <string id="CinematicCamera_disable_calvary_charge" text="Disable Calvary Charge" />
+    <string id="CinematicCamera_disable_calvary_charge_hint" text="Disable Calvary Charge to avoid too much time wasting on calvary charge behavior." />
+
+    <string id="CinematicCamera_action_option" text="Action Option" />
+    <string id="CinematicCamera_all_actions_list" text="All Actions" />
+    <string id="CinematicCamera_all_actions_list_hint" text="The name of the action to be executed." />
+    <string id="CinematicCamera_favorite_actions_list" text="Favorite Actions" />
+    <string id="CinematicCamera_favorite_actions_list_hint" text="The name of the action to be executed." />
+    <string id="CinematicCamera_add_action_to_favorites" text="Add Action to Favorites" />
+    <string id="CinematicCamera_add_action_to_favorites_hint" text="Add the action to the favorite actions list." />
+    <string id="CinematicCamera_remove_action_from_favorites" text="Remove Action from Favorites" />
+    <string id="CinematicCamera_remove_action_from_favorites_hint" text="Remove the action from the favorite actions list." />
+    <string id="CinematicCamera_execute_action" text="Execute Action" />
+    <string id="CinematicCamera_execute_action_hint" text="Execute the action with the specified action name." />
+
+    <string id="CinematicCamera_facial_animation_option" text="Facial Animation Option" />
+    <string id="CinematicCamera_all_facial_animations_list" text="All Facial Animations" />
+    <string id="CinematicCamera_all_facial_animations_list_hint" text="The name of the facial animation to be executed." />
+    <string id="CinematicCamera_favorite_facial_animations_list" text="Favorite Facial Animations" />
+    <string id="CinematicCamera_favorite_facial_animations_list_hint" text="The name of the facial animation to be executed." />
+    <string id="CinematicCamera_add_facial_animation_to_favorites" text="Add Facial Animation to Favorites" />
+    <string id="CinematicCamera_add_facial_animation_to_favorites_hint" text="Add the facial animation to the favorite facial animations list." />
+    <string id="CinematicCamera_remove_facial_animation_from_favorites" text="Remove Facial Animation from Favorites" />
+    <string id="CinematicCamera_remove_facial_animation_from_favorites_hint" text="Remove the facial animation from the favorite facial animations list." />
+    <string id="CinematicCamera_execute_facial_animation" text="Execute Facial Animation" />
+    <string id="CinematicCamera_execute_facial_animation_hint" text="Execute the facial animation with the specified facial animation name." />
   </strings>
 </base>

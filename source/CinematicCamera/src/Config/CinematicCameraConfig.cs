@@ -1,8 +1,11 @@
 ﻿using MissionSharedLibrary.Config;
 using MissionSharedLibrary.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
+using TaleWorlds.Core;
 
 namespace CinematicCamera
 {
@@ -45,31 +48,25 @@ namespace CinematicCamera
 
         public float CameraSpeedLow = 0.5f;
 
-        public float CameraSpeedMiddle = 1f;
+        public float CameraSpeedMedium = 1f;
 
         public float CameraSpeedHigh = 3f;
 
         public bool OrderUIInRegularScene = false;
 
-        public string FacialAnimation1Name = "";
+        public string ActionName = "";
 
-        public bool FacialAnim1Loop = false;
+        public List<string> FavoriteActions = new List<string>();
 
-        public string FacialAnimation2Name = "";
+        public string FacialAnimation = "";
 
-        public bool FacialAnim2Loop = false;
+        public List<string> FavoriteFacialAnimations = new List<string>();
 
-        public string FacialAnimation3Name = "";
+        public bool IsCinematicCameraOptionShown = true;
 
-        public bool FacialAnim3Loop = false;
+        public bool IsActionOptionShown = true;
 
-        public string FacialAnimation4Name = "";
-
-        public bool FacialAnim4Loop = false;
-
-        public string FacialAnimation5Name = "";
-
-        public bool FacialAnim5Loop = false;
+        public bool IsFacialAnimationOptionShown = true;
 
         public static void OnMenuClosed()
         {
@@ -89,9 +86,23 @@ namespace CinematicCamera
             DepthOfFieldStart = other.DepthOfFieldStart;
             DepthOfFieldEnd = other.DepthOfFieldEnd;
             CameraSpeedLow = other.CameraSpeedLow;
-            CameraSpeedMiddle = other.CameraSpeedMiddle;
+            CameraSpeedMedium = other.CameraSpeedMedium;
             CameraSpeedHigh = other.CameraSpeedHigh;
             OrderUIInRegularScene = other.OrderUIInRegularScene;
+            FavoriteActions = other.FavoriteActions.Distinct().ToList();
+            if (FavoriteActions.IsEmpty())
+            {
+                FavoriteActions = new List<string>()
+                {
+                    "act_none",
+                    "act_walk_idle_unarmed",
+                    "act_crouch_walk_idle_unarmed",
+                };
+            }
+            FacialAnimation = other.FacialAnimation;
+            FavoriteFacialAnimations = other.FavoriteFacialAnimations.Distinct().ToList();
+            IsCinematicCameraOptionShown = other.IsCinematicCameraOptionShown;
+            IsActionOptionShown = other.IsActionOptionShown;
         }
 
         protected static string SavePathStatic { get; } = Path.Combine(ConfigPath.ConfigDir, CinematicCameraSubModule.ModuleId);

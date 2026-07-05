@@ -1,7 +1,10 @@
 ﻿using MissionSharedLibrary.View;
-using System;
 using MissionSharedLibrary.View.ViewModelCollection.Basic;
+using System;
+using System.Collections.Generic;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.Selector;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
 namespace CinematicCamera
@@ -24,6 +27,10 @@ namespace CinematicCamera
 
         private NumericVM _cameraSpeedLow, _cameraSpeedMiddle, _cameraSpeedHigh;
 
+        private SelectorVM<SelectorItemVM> _colorGradeSelector;
+
+        private SelectorVM<SelectorItemVM> _overlaySelector;
+
         public string PlayerInvulnerableString { get; } = GameTexts.FindText("str_cinematic_camera_player_invulnerable").ToString();
         public string ResetString { get; } = GameTexts.FindText("str_cinematic_camera_reset").ToString();
 
@@ -41,6 +48,32 @@ namespace CinematicCamera
                 _config.PlayerInvulnerable = value;
                 _setPlayerHealthLogic?.UpdateInvulnerable(_config.PlayerInvulnerable);
                 OnPropertyChanged(nameof(PlayerInvulnerable));
+            }
+        }
+
+        [DataSourceProperty]
+        public SelectorVM<SelectorItemVM> ColorGradeSelector
+        {
+            get => this._colorGradeSelector;
+            set
+            {
+                if (value == this._colorGradeSelector)
+                    return;
+                this._colorGradeSelector = value;
+                this.OnPropertyChangedWithValue<SelectorVM<SelectorItemVM>>(value, nameof(ColorGradeSelector));
+            }
+        }
+
+        [DataSourceProperty]
+        public SelectorVM<SelectorItemVM> OverlaySelector
+        {
+            get => this._overlaySelector;
+            set
+            {
+                if (value == this._overlaySelector)
+                    return;
+                this._overlaySelector = value;
+                this.OnPropertyChangedWithValue<SelectorVM<SelectorItemVM>>(value, nameof(OverlaySelector));
             }
         }
 
@@ -249,20 +282,45 @@ namespace CinematicCamera
                 {
                     _config.CameraSpeedLow = v;
                 });
-            CameraSpeedMiddle = new NumericVM(GameTexts.FindText("str_cinematic_camera_camera_speed_middle").ToString(), _config.CameraSpeedMiddle, 0.01f, 9.99f, false,
+            CameraSpeedMiddle = new NumericVM(GameTexts.FindText("str_cinematic_camera_camera_speed_medium").ToString(), _config.CameraSpeedMedium, 0.01f, 9.99f, false,
                 v =>
                 {
-                    _config.CameraSpeedMiddle = v;
+                    _config.CameraSpeedMedium = v;
                 });
             CameraSpeedHigh = new NumericVM(GameTexts.FindText("str_cinematic_camera_camera_speed_high").ToString(), _config.CameraSpeedHigh, 0.01f, 9.99f, false,
                 v =>
                 {
                     _config.CameraSpeedHigh = v;
                 });
+            RefreshValues();
+            Mission.Current.Scene.SetPhotoModeOn(true);
         }
 
         public override void RefreshValues()
         {
+            List<string> list1 = new List<string>();
+            string allColorGradeNames = Mission.Current.Scene.GetAllColorGradeNames();
+            string[] separator1 = new string[1] { "*/*" };
+            foreach (string variation in allColorGradeNames.Split(separator1, StringSplitOptions.RemoveEmptyEntries))
+            {
+                string str = GameTexts.FindText("str_photo_mode_color_grade", variation).ToString();
+                list1.Add(str);
+            }
+            if (list1.Count == 0)
+                list1.Add("Photo Mode Not Active");
+            this.ColorGradeSelector = new SelectorVM<SelectorItemVM>((IEnumerable<string>)list1, Mission.Current.Scene.GetSceneColorGradeIndex(), new Action<SelectorVM<SelectorItemVM>>(this.OnColorGradeSelectionChanged));
+            
+            List<string> list2 = new List<string>();
+            string allFilterNames = Mission.Current.Scene.GetAllFilterNames();
+            string[] separator2 = new string[1] { "*/*" };
+            foreach (string variation in allFilterNames.Split(separator2, StringSplitOptions.RemoveEmptyEntries))
+            {
+                string str = GameTexts.FindText("str_photo_mode_overlay", variation).ToString();
+                list2.Add(str);
+            }
+            if (list2.Count == 0)
+                list2.Add("Photo Mode Not Active");
+            this.OverlaySelector = new SelectorVM<SelectorItemVM>((IEnumerable<string>)list2, Mission.Current.Scene.GetSceneFilterIndex(), new Action<SelectorVM<SelectorItemVM>>(this.OnOverlaySelectionChanged));
             OnPropertyChanged(nameof(PlayerInvulnerable));
             OnPropertyChanged(nameof(RotateSmoothMode));
             _verticalFov.OptionValue = _config.CameraFov;
@@ -277,7 +335,26 @@ namespace CinematicCamera
         {
             _config.Serialize();
 
+            if (OverlaySelector.SelectedIndex == 0)
+            {
+                Mission.Current.Scene.SetPhotoModeOn(false);
+            }
             base.CloseMenu();
+        }
+        private void OnColorGradeSelectionChanged(SelectorVM<SelectorItemVM> obj)
+        {
+            if (Mission.Current.Scene.GetSceneColorGradeIndex() == obj.SelectedIndex)
+                return;
+            Mission.Current.Scene.SetSceneColorGradeIndex(obj.SelectedIndex);
+        }
+        private void OnOverlaySelectionChanged(SelectorVM<SelectorItemVM> obj)
+        {
+            if (Mission.Current.Scene.GetSceneFilterIndex() == obj.SelectedIndex)
+                return;
+            int num = Mission.Current.Scene.SetSceneFilterIndex(obj.SelectedIndex);
+            if (num < 0)
+                return;
+            this.ColorGradeSelector.SelectedIndex = num;
         }
     }
 }
