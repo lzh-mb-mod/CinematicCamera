@@ -106,4 +106,8 @@
   <string id="str_cinematic_camera_remove_facial_animation_from_favorites_hint" text="{=CinematicCamera_remove_facial_animation_from_favorites_hint}Remove the facial animation from the favorite facial animations list." />
   <string id="str_cinematic_camera_execute_facial_animation" text="{=CinematicCamera_execute_facial_animation}Execute Facial Animation" />
   <string id="str_cinematic_camera_execute_facial_animation_hint" text="{=CinematicCamera_execute_facial_animation_hint}Execute the facial animation with the specified facial animation name." />
+
+  <string id="str_cinematic_camera_no_agent_to_add" text="{=CinematicCamera_no_agent_to_add}No agent to add." />
+  <string id="str_cinematic_camera_current_agent_set_to" text="{=CinematicCamera_current_agent_set_to}Current agent set to {AgentName}." />
+  <string id="str_cinematic_camera_clear_current_agent" text="{=CinematicCamera_clear_current_agent}Current agent cleared." />
 </strings>

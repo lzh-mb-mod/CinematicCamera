@@ -32,10 +32,12 @@ namespace CinematicCamera
     {
         public SelectionOptionData SelectionOptionData;
         private readonly CinematicCameraLogic _logic = Mission.Current.GetMissionBehavior<CinematicCameraLogic>();
+        private readonly OptionCategory _optionCategory;
 
-        public CurrentAgentSelectionData(MissionScreen missionScreen)
+        public CurrentAgentSelectionData(MissionScreen missionScreen, OptionCategory optionCategory)
         {
             var agents = GetAgentList();
+            _optionCategory = optionCategory;
             SelectionOptionData = new SelectionOptionData(i =>
                 {
                     var agents = GetAgentList();
@@ -43,7 +45,13 @@ namespace CinematicCamera
                         return;
                     if (i >= 0 && i < agents.Count)
                     {
+                        var previousAgent = CinematicCameraLogic.GetCurrentAgent();
+                        var agentToSet = agents[i];
                         CinematicCameraLogic.SelectAgent(agents[i]);
+                        if (previousAgent != agentToSet)
+                        {
+                            _optionCategory.UpdateAllOptions();
+                        }
                     }
                 },
                 () => {
@@ -98,7 +106,7 @@ namespace CinematicCamera
                 var currentAgentOption = new SelectionOptionViewModel(
                     GameTexts.FindText("str_cinematic_camera_current_agent"),
                     GameTexts.FindText("str_cinematic_camera_current_agent_hint"),
-                    new CurrentAgentSelectionData(Utility.GetMissionScreen()).SelectionOptionData, true);
+                    new CurrentAgentSelectionData(Utility.GetMissionScreen(), cameraOptionCategory).SelectionOptionData, true);
                 cameraOptionCategory.AddOption(currentAgentOption);
                 cameraOptionCategory.AddOption(new ActionOptionViewModel(GameTexts.FindText("str_cinematic_camera_set_current_agent"),
                     GameTexts.FindText("str_cinematic_camera_set_current_agent_hint"),
