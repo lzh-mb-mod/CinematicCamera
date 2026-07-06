@@ -56,12 +56,6 @@ namespace CinematicCamera.Config.HotKey
             result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.TogglePlayerInvulnerable, nameof(GameKeyEnum.TogglePlayerInvulnerable),
                 CategoryId, new List<GameKeySequenceAlternative>
                 {
-                    new GameKeySequenceAlternative(
-                        new List<InputKey> () {
-                            InputKey.LeftControl,
-                            InputKey.H
-                        }
-                    )
                 }));
             result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.IncreaseDepthOfFieldDistance, nameof(GameKeyEnum.IncreaseDepthOfFieldDistance),
                 CategoryId, new List<GameKeySequenceAlternative>

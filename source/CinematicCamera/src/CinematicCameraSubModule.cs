@@ -27,7 +27,7 @@ namespace CinematicCamera
             try
             {
                 Initialize();
-                Utility.ShouldDisplayMessage = false;
+                Utility.ShouldDisplayMessage = true;
                 _successPatch = true;
                 _successPatch &= Patch_MissionState.Patch(_harmony);
                 _successPatch &= Patch_BattlePowerCalculationLogic.Patch(_harmony);

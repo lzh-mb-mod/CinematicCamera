@@ -108,5 +108,9 @@
     <string id="CinematicCamera_remove_facial_animation_from_favorites_hint" text="Remove the facial animation from the favorite facial animations list." />
     <string id="CinematicCamera_execute_facial_animation" text="Execute Facial Animation" />
     <string id="CinematicCamera_execute_facial_animation_hint" text="Execute the facial animation with the specified facial animation name." />
+
+    <string id="CinematicCamera_no_agent_to_add" text="No agent to add." />
+    <string id="CinematicCamera_current_agent_set_to" text="Current agent set to {AgentName}." />
+    <string id="CinematicCamera_clear_current_agent" text="Current agent cleared." />
   </strings>
 </base>

@@ -77,7 +77,7 @@ namespace CinematicCamera
         public static void AddToEnemyTeam()
         {
             var agentToAdd = GetCurrentAgent();
-            if (agentToAdd != null)
+            if (agentToAdd != null && !agentToAdd.IsMainAgent)
             {
                 SetAgentFormation(agentToAdd, null);
                 agentToAdd.SetTeam(Mission.Current.PlayerEnemyTeam, true);
