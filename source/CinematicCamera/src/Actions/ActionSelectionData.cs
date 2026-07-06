@@ -230,7 +230,6 @@ namespace CinematicCamera.Actions
                 ActionIndexCache.act_horse_fall_right,
                 ActionIndexCache.act_cutscene_npc_argue_player_1,
                 ActionIndexCache.act_escape_jump,
-                ActionIndexCache.act_raid_jump,
             };
         }
 
