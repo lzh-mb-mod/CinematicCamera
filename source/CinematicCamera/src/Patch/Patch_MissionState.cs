@@ -49,7 +49,7 @@ namespace CinematicCamera.Patch
                 var list = new List<MissionBehavior>
                 {
                     new BattlePowerCalculationLogic(),
-                    new OrderTroopPlacer(null),
+                    new OrderTroopPlacer(),
                     ViewCreator.CreateMissionOrderUIHandler()
                 };
                 foreach (var missionBehavior in list)

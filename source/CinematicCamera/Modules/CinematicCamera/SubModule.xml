@@ -11,7 +11,7 @@
     <DependedModule Id="Sandbox" DependentVersion="v1.2.12" />
     <DependedModule Id="CustomBattle" DependentVersion="v1.2.12"/>
     <DependedModule Id="StoryMode" DependentVersion="v1.2.12" />
-    <DependedModule Id="RTSCamera" DependentVersion="v5.1.14" />
+    <DependedModule Id="RTSCamera" DependentVersion="v5.1.21" />
   </DependedModules>
   <SubModules>
     <SubModule>

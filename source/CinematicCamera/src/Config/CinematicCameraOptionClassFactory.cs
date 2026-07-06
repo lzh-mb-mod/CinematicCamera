@@ -90,8 +90,7 @@ namespace CinematicCamera
                 var optionClass = new OptionClass(CinematicCameraSubModule.ModuleId,
                     GameTexts.FindText("str_cinematic_camera_cinematic_camera"), menuClassCollection);
                 var cameraOptionCategory =
-                    new OptionCategory("Camera", GameTexts.FindText("str_cinematic_camera_cinematic_camera"),
-                    () => CinematicCameraConfig.Get().IsCinematicCameraOptionShown, b => CinematicCameraConfig.Get().IsCinematicCameraOptionShown = b);
+                    new OptionCategory("Camera", GameTexts.FindText("str_cinematic_camera_cinematic_camera"));
 
                 cameraOptionCategory.AddOption(new ActionOptionViewModel(GameTexts.FindText("str_cinematic_camera_open_menu"), null,
                     () =>
@@ -318,16 +317,15 @@ namespace CinematicCamera
                         if (currentAgent == null)
                             return;
 
-                        currentAgent.HumanAIComponent?.OverrideBehaviorParams(HumanAIComponent.AISimpleBehaviorKind.ChargeHorseback, 0, 25f, 0f, 30f, 0f);
-                        currentAgent.HumanAIComponent?.OverrideBehaviorParams(HumanAIComponent.AISimpleBehaviorKind.RangedHorseback, 0, 10f, 0f, 20f, 0f);
+                        currentAgent.HumanAIComponent?.SetBehaviorParams(HumanAIComponent.AISimpleBehaviorKind.ChargeHorseback, 0, 25f, 0f, 30f, 0f);
+                        currentAgent.HumanAIComponent?.SetBehaviorParams(HumanAIComponent.AISimpleBehaviorKind.RangedHorseback, 0, 10f, 0f, 20f, 0f);
                         currentAgent.HumanAIComponent?.SyncBehaviorParamsIfNecessary();
                     }));
 
                 optionClass.AddOptionCategory(0, cameraOptionCategory);
 
                 var actionOptionCategory =
-                    new OptionCategory("Action", GameTexts.FindText("str_cinematic_camera_action_option"),
-                    () => CinematicCameraConfig.Get().IsActionOptionShown, b => CinematicCameraConfig.Get().IsActionOptionShown = b);
+                    new OptionCategory("Action", GameTexts.FindText("str_cinematic_camera_action_option"));
                 actionOptionCategory.AddOption(new SelectionOptionViewModel(
                     GameTexts.FindText("str_cinematic_camera_all_actions_list"),
                     GameTexts.FindText("str_cinematic_camera_all_actions_list_hint"),
@@ -390,8 +388,7 @@ namespace CinematicCamera
                 optionClass.AddOptionCategory(1, actionOptionCategory);
 
                 var facialAnimationOptionCategory =
-                    new OptionCategory("FacialAnimation", GameTexts.FindText("str_cinematic_camera_facial_animation_option"),
-                    () => CinematicCameraConfig.Get().IsFacialAnimationOptionShown, b => CinematicCameraConfig.Get().IsFacialAnimationOptionShown = b);
+                    new OptionCategory("FacialAnimation", GameTexts.FindText("str_cinematic_camera_facial_animation_option"));
                 facialAnimationOptionCategory.AddOption(new SelectionOptionViewModel(
                     GameTexts.FindText("str_cinematic_camera_all_facial_animations_list"),
                     GameTexts.FindText("str_cinematic_camera_all_facial_animations_list_hint"),

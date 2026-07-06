@@ -32,7 +32,6 @@ namespace CinematicCamera
                 _successPatch &= Patch_MissionState.Patch(_harmony);
                 _successPatch &= Patch_BattlePowerCalculationLogic.Patch(_harmony);
                 _successPatch &= Patch_AgentNavigator.Patch(_harmony);
-                _successPatch &= Patch_VisualOrderProvider.Patch(_harmony);
             }
             catch (Exception e)
             {
@@ -58,7 +57,7 @@ namespace CinematicCamera
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
 
-            if (!ThirdInitialize())
+            if (!SecondInitialize())
                 return;
             if (!_successPatch)
             {
@@ -76,9 +75,9 @@ namespace CinematicCamera
             }
         }
 
-        private bool ThirdInitialize()
+        private bool SecondInitialize()
         {
-            if (!Initializer.ThirdInitialize())
+            if (!Initializer.SecondInitialize())
                 return false;
 
             CinematicCameraGameKeyCategory.RegisterGameKeyCategory();

@@ -7,6 +7,7 @@ using SandBox.Conversation;
 using SandBox.Missions.AgentBehaviors;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -107,7 +108,7 @@ namespace CinematicCamera
 
         public static void SetAgentFormation(Agent agent, Formation formation)
         {
-            if (agent == null || Mission.Current.IsNavalBattle)
+            if (agent == null)
                 return;
             var campaignAgentComponent = agent.GetComponent<CampaignAgentComponent>();
             if (campaignAgentComponent == null || campaignAgentComponent.AgentNavigator == null)
@@ -272,7 +273,7 @@ namespace CinematicCamera
                 UpdateInvulnerable(false);
         }
 
-        private void Mission_OnMainAgentChanged(Agent oldAgent)
+        private void Mission_OnMainAgentChanged(object sender, PropertyChangedEventArgs e)
         {
             if (Mission.MainAgent != null)
             {
@@ -321,7 +322,7 @@ namespace CinematicCamera
             if (currentAgent == null)
                 return;
             var action = ActionIndexCache.Create(actionName);
-            currentAgent.SetActionChannel(0, action, additionalFlags: AnimFlags.amf_priority_mask | AnimFlags.anf_restart);
+            currentAgent.SetActionChannel(0, action, true);
         }
 
         internal static void ExecuteFacialAnimation(string facialAnimationName)
